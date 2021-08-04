@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import { data } from "../data/templatesData";
-import image from "../images/2.png";
+import image from "../images/1.png";
 const CreateNew = () => {
   return (
     <div className="container">

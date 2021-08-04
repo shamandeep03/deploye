@@ -3,9 +3,8 @@ import Editorconfig from "../config/Editorconfig";
 import grapesjs from "grapesjs";
 const Editor = ({ id, Temp }) => {
   useEffect(() => {
-      grapesjs.init(Editorconfig());
-      console.log(Temp);
-  }, []);
+    grapesjs.init(Editorconfig());
+  });
   return (
     <div className="container-fluid p-0">
       <div id="gjs">{Temp}</div>
