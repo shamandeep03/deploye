@@ -1,4 +1,3 @@
-import React from "react";
 import "grapesjs/dist/css/grapes.min.css";
 import "grapesjs/dist/grapes.min.js";
 import parserPostCSS from "grapesjs-parser-postcss";
