@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-const Templates = () => {
+const Temp = () => {
   const { data } = useSelector((state) => state.template);
   return <html dangerouslySetInnerHTML={{ __html: data }} />;
 };
 
-export default Templates;
+export default Temp;
