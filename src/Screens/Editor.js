@@ -71,10 +71,7 @@ const Editor = ({ id, Temp }) => {
     });
     editor.Commands.add("set-device-mobile", {
       run: (editor) => editor.setDevice("Mobile"),
-    });
-    // var htmlWithCss = editor.runCommand("gjs-get-inlined-html");
-    var htmldata = { html: Temp };
-   
+    });   
   });
   if (Editorconfig != null) {
     return (
