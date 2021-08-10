@@ -9,7 +9,7 @@ export default function GrapesjsEditor() {
     fromElement: true,
     height: "540px",
     width: "100%",
-    plugins: ['grapesjs-script-editor'],
+    plugins: ["grapesjs-script-editor"],
     // Size of the editor
     // Disable the storage manager for the moment
     storageManager: false,
@@ -63,7 +63,7 @@ export default function GrapesjsEditor() {
           buttons: [
             {
               id: "visibility",
-              active: true, // active by default
+              active: false, // active by default
               className: "btn-toggle-borders",
               label: "<u>B</u>",
               command: "sw-visibility", // Built-in command

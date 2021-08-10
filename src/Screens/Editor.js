@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Editorconfig from "../config/Editorconfig";
+import Editorconfig from "../config/GrapesjsEditor";
 import grapesjs from "grapesjs";
 //import Newcommands from "../config/commands/index.js";
 const Editor = ({ id, Temp }) => {
@@ -40,8 +40,6 @@ const Editor = ({ id, Temp }) => {
         smEl.style.display = "none";
       },
     });
-    // Define command
-    // ...
     editor.Commands.add("show-traits", {
       getTraitsEl(editor) {
         const row = editor.getContainer().closest(".editor-row");
@@ -71,7 +69,8 @@ const Editor = ({ id, Temp }) => {
     });
     editor.Commands.add("set-device-mobile", {
       run: (editor) => editor.setDevice("Mobile"),
-    });   
+    });
+    editor.stopCommand("sw-visibility");
   });
   if (Editorconfig != null) {
     return (

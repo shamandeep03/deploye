@@ -1,16 +1,11 @@
 import "grapesjs/dist/css/grapes.min.css";
-import "grapesjs/dist/grapes.min.js";
-import parserPostCSS from "grapesjs-parser-postcss";
 // import Script from ".../public/script";
 const Editorconfig = () => {
   return {
     container: "#gjs",
+    //dragMode: "relative",
     fromElement: true,
-    // canvas: {
-    //   scripts: [Script],
-    // },
     storageManager: false,
-    plugins: [parserPostCSS],
     blockManager: {
       appendTo: "#blocks",
       blocks: [
@@ -64,8 +59,7 @@ const Editorconfig = () => {
         {
           id: "image",
           label: "Image",
-          // Select the component once it's dropped
-          select: true,
+
           // You can pass components as a JSON instead of a simple HTML string,
           // in this case we also use a defined component type `image`
           content: { type: "image" },
