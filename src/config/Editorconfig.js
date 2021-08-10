@@ -13,10 +13,59 @@ const Editorconfig = () => {
           id: "section", // id is mandatory
           label: "<b>Section</b>", // You can use HTML/SVG inside labels
           attributes: { class: "gjs-block-section" },
-          content: `<section>
-                    <h1>This is a simple title</h1>
-                    <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
-                  </section>`,
+          content: `   
+            <div class="card">
+              <img src=
+              "https://previews.123rf.com/images/jemastock/jemastock1706/jemastock170608711/80128439-young-and-successful-business-man-cartoon-employee-work.jpg"alt="John" style="width:100%">
+              <h1>John Doe</h1>
+              <p class="title">CEO & Founder, Example</p>
+              <p>Harvard University</p>
+              <a href="#"><i class="fa fa-dribbble"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <p><button>Contact</button></p>
+            </div>
+             <style>
+             .card {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              max-width: 300px;
+              margin-top: 100px;
+              margin-right:auto;
+              margin-left:auto;
+              margin-bottom:auto:
+              text-align: center;
+            }
+            
+            .title {
+              color: grey;
+              font-size: 18px;
+            }
+            
+            button {
+              border: none;
+              outline: 0;
+              display: inline-block;
+              padding: 8px;
+              color: white;
+              background-color: #000;
+              text-align: center;
+              cursor: pointer;
+              width: 100%;
+              font-size: 18px;
+            }
+            
+            a {
+              text-decoration: none;
+              font-size: 22px;
+              color: black;
+            }
+            
+            button:hover, a:hover {
+              opacity: 0.7;
+            }
+              </style>
+            `,
         },
         {
           id: "text",
