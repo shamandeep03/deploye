@@ -4,20 +4,43 @@ import "../Screens/Editor.css";
 export default function GrapesjsEditor() {
   return {
     container: "#gjs",
-    // Get the content for the canvas directly from the element
-    // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
     fromElement: true,
-    height: "540px",
+    height: "580px",
     width: "100%",
     plugins: ["grapesjs-script-editor"],
-    // Size of the editor
-    // Disable the storage manager for the moment
+    cssIcons:
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
     storageManager: false,
+    // pageManager: {
+    //   pages: [
+    //     {
+    //       id: "page-id",
+    //       styles: `.my-class { color: red }`, // or a JSON of styles
+    //       component: '<div class="my-class">My element</div>', // or a JSON of components
+    //     },
+    //   ],
+    // },
     layerManager: {
       appendTo: ".layers-container",
     },
     selectorManager: {
       appendTo: ".styles-container",
+    },
+    assetManager: {
+      assets: [
+        "http://placehold.it/350x250/78c5d6/fff/image1.jpg",
+        {
+          type: "image",
+          src: "http://placehold.it/350x250/459ba8/fff/image2.jpg",
+          height: 350,
+          width: 250,
+        },
+        {
+          src: "http://placehold.it/350x250/79c267/fff/image3.jpg",
+          height: 350,
+          width: 250,
+        },
+      ],
     },
     deviceManager: {
       devices: [
@@ -30,6 +53,12 @@ export default function GrapesjsEditor() {
           width: "320px", // this value will be used on canvas width
           widthMedia: "480px", // this value will be used in CSS @media
         },
+        {
+          id: "tablet",
+          name: "Tablet",
+          width: "768px",
+          widthMedia: "992px",
+        },
       ],
     },
     panels: {
@@ -40,15 +69,24 @@ export default function GrapesjsEditor() {
           buttons: [
             {
               id: "device-desktop",
-              label: "D",
+              className: "fa fa-desktop",
               command: "set-device-desktop",
               active: true,
+              attributes: { title: "Desktop View" },
               togglable: false,
             },
             {
               id: "device-mobile",
-              label: "M",
+              className: "fa fa-mobile",
               command: "set-device-mobile",
+              attributes: { title: "Mobile View" },
+              togglable: false,
+            },
+            {
+              id: "device-tablate",
+              className: "fa fa-tablet",
+              command: "set-device-Tablet",
+              attributes: { title: "Tablet View" },
               togglable: false,
             },
           ],
@@ -64,14 +102,14 @@ export default function GrapesjsEditor() {
             {
               id: "visibility",
               active: false, // active by default
-              className: "btn-toggle-borders",
-              label: "<u>B</u>",
+              className: "fa fa-square-o",
+              attributes: { title: "View" },
               command: "sw-visibility", // Built-in command
             },
             {
               id: "export",
-              className: "btn-open-export",
-              label: "Exp",
+              className: "fa fa-code",
+              attributes: { title: "Code View" },
               command: "export-template",
               context: "export-template", // For grouping context of buttons from the same panel
             },
@@ -80,6 +118,7 @@ export default function GrapesjsEditor() {
               className: "btn-show-json",
               label: "JSON",
               context: "show-json",
+              attributes: { title: "json View" },
               command(editor) {
                 editor.Modal.setTitle("Components JSON")
                   .setContent(
@@ -103,8 +142,6 @@ export default function GrapesjsEditor() {
             cl: 1, // Left handler
             cr: 0, // Right handler
             bc: 0, // Bottom handler
-            // Being a flex child we need to change `flex-basis` property
-            // instead of the `width` (default)
             keyWidth: "flex-basis",
           },
         },
@@ -112,33 +149,56 @@ export default function GrapesjsEditor() {
           id: "panel-switcher",
           el: ".panel__switcher",
           buttons: [
-            {
-              id: "show-layers",
-              active: true,
-              label: "Layers",
-              command: "show-layers",
-              // Once activated disable the possibility to turn it off
-              togglable: false,
-            },
+            // {
+            //   id: "undo",
+            //   className: "fa fa-undo",
+            //   command: "undo",
+            //   attributes: { title: "Undo" },
+            // },
+            // {
+            //   id: "redo",
+            //   className: "fa fa-repeat",
+            //   command: "redo",
+            //   attributes: { title: "Redo" },
+            // },
             {
               id: "show-style",
               active: true,
-              label: "Styles",
+              className: "fa fa-paint-brush",
               command: "show-styles",
+              attributes: { title: "Open style Manager" },
+              togglable: false,
+            },
+            {
+              id: "show-layers",
+              active: true,
+              className: "fa fa-bars",
+              command: "show-layers",
+              attributes: { title: "Open Layers Manager" },
               togglable: false,
             },
             {
               id: "show-traits",
               active: true,
-              label: "Traits",
+              className: "fas fa-tools",
+              attributes: { title: "Open Traits Manager" },
               command: "show-traits",
+              togglable: false,
+            },
+            {
+              id: "show-pages",
+              active: false,
+              className: "fas fa-tools",
+              attributes: { title: "Open Pages Manager" },
+              command: "show-pages",
               togglable: false,
             },
             {
               id: "show-blocks",
               active: true,
-              label: "Blocks",
+              className: "fa fa-th-large",
               command: "show-blocks",
+              attributes: { title: "Open Block Manager" },
               togglable: false,
             },
           ],
@@ -152,66 +212,73 @@ export default function GrapesjsEditor() {
       appendTo: ".styles-container",
       sectors: [
         {
-          name: "Dimension",
+          name: "General",
           open: false,
-          // Use built-in properties
           buildProps: [
-            "width",
-            "min-height",
-            "padding",
-            "margin",
-            "font-size",
-            "color",
+            "float",
             "display",
             "position",
-            "font-color",
+            "top",
+            "right",
+            "left",
+            "bottom",
+          ],
+        },
+        {
+          name: "Dimension",
+          open: false,
+          buildProps: [
+            "width",
+            "height",
+            "max-width",
+            "min-height",
+            "margin",
+            "padding",
+          ],
+        },
+        {
+          name: "Typography",
+          open: false,
+          buildProps: [
+            "font-family",
+            "font-size",
+            "font-weight",
+            "letter-spacing",
+            "color",
             "line-height",
             "text-align",
-            "text-decoration",
             "text-shadow",
-            "opacity",
-            "border",
+          ],
+        },
+        {
+          name: "Decorations",
+          open: false,
+          buildProps: [
+            "border-radius-c",
+            "background-color",
             "border-radius",
+            "border",
             "box-shadow",
             "background",
-          ],
-          // Use `properties` to define/override single property
-          properties: [
-            {
-              // Type of the input,
-              // options: integer | radio | select | color | slider | file | composite | stack
-              type: "integer",
-              name: "The width", // Label for the property
-              property: "width", // CSS property (if buildProps contains it will be extended)
-              units: ["px", "%"], // Units, available only for 'integer' types
-              defaults: "auto", // Default value
-              min: 0, // Min value, available only for 'integer' types
-            },
           ],
         },
         {
           name: "Extra",
           open: false,
-          buildProps: ["background-color", "box-shadow", "custom-prop"],
+          buildProps: ["opacity", "transition", "perspective", "transform"],
           properties: [
             {
-              id: "custom-prop",
-              name: "Custom Label",
-              property: "font-size",
-              type: "select",
-              defaults: "32px",
-              // List of options, available only for 'select' and 'radio'  types
-              options: [
-                { value: "12px", name: "Tiny" },
-                { value: "18px", name: "Medium" },
-                { value: "32px", name: "Big" },
-              ],
+              type: "slider",
+              property: "opacity",
+              defaults: 1,
+              step: 0.01,
+              max: 1,
+              min: 0,
             },
           ],
         },
       ],
     },
-
     blockManager: {
       appendTo: "#blocks",
       blocks: [

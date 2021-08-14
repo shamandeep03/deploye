@@ -1,8 +1,5 @@
-#gjs {
-  border: 3px solid #444;
-}
 .editor-row {
-  height: 540px;
+  height: 700px;
 }
 /* Reset some default styling */
 .gjs-cv-canvas {
@@ -22,6 +19,7 @@
   position: initial;
   justify-content: center;
   justify-content: space-between;
+  background-color: silver;
 }
 .panel__basic-actions {
   position: initial;
@@ -42,10 +40,23 @@
   flex-basis: 230px;
   position: relative;
   overflow-y: auto;
+  background-color: rgb(231, 223, 223);
 }
 .panel__switcher {
   position: initial;
 }
 .panel__devices {
   position: initial;
+}
+.gjs-one-bg {
+  background-color: #242a3b;
+  background-color: rgb(231, 223, 223);
+  color: black;
+}
+/* .gjs-pn-btn {
+  min-width: 75px;
+} */
+
+.gjs-clm-tags #gjs-clm-tags-field {
+  height: 100px;
 }

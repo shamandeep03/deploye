@@ -24,4 +24,9 @@ export const data = [
     id: "5",
     image: "../images/5.jpg",
   },
+  {
+    name: "sixthTemplate",
+    id: "6",
+    image: "../images/5.jpg",
+  },
 ];
