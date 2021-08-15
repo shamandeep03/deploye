@@ -1,30 +1,34 @@
 import "grapesjs/dist/css/grapes.min.css";
 import "../Screens/Editor.css";
-<script src="https://unpkg.com/grapesjs-script-editor"></script>;
+import grapesjs from "grapesjs";
+//import plugin from "grapesjs-component-code-editor";
+//import 'grapesjs/dist/css/grapes.min.css';
+//import "grapesjs-component-code-editor/dist/grapesjs-component-code-editor.min.css";
+
 export default function GrapesjsEditor() {
   return {
-    container: "#gjs",
+    container: "#gjs2",
     fromElement: true,
     height: "580px",
     width: "100%",
-    plugins: ["grapesjs-script-editor"],
     cssIcons:
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
     storageManager: false,
-    // pageManager: {
-    //   pages: [
-    //     {
-    //       id: "page-id",
-    //       styles: `.my-class { color: red }`, // or a JSON of styles
-    //       component: '<div class="my-class">My element</div>', // or a JSON of components
-    //     },
-    //   ],
-    // },
     layerManager: {
       appendTo: ".layers-container",
     },
     selectorManager: {
       appendTo: ".styles-container",
+    },
+    canvas: {
+      styles: [
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
+      ],
+      scripts: [
+        "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+      ],
     },
     assetManager: {
       assets: [
@@ -64,12 +68,78 @@ export default function GrapesjsEditor() {
     panels: {
       defaults: [
         {
-          id: "panel-devices",
-          el: ".panel__devices",
+          id: "other_panels",
+          el: ".other_panels",
           buttons: [
             {
+              id: "show-style",
+              active: true,
+              className: "fa fa-paint-brush",
+              command: "show-styles",
+              attributes: { title: "Open style Manager" },
+              togglable: false,
+            },
+            {
+              id: "show-layers",
+              active: true,
+              className: "fa fa-bars btn btn-light",
+              command: "show-layers",
+              attributes: { title: "Open Layers Manager" },
+              togglable: false,
+            },
+            {
+              id: "show-traits",
+              active: true,
+              className: "fa fa-cog btn btn-light",
+              attributes: { title: "Open Traits Manager" },
+              command: "show-traits",
+              togglable: false,
+            },
+            // {
+            //   id: "show-pages",
+            //   active: false,
+            //   className: "fas fa-tools",
+            //   attributes: { title: "Open Pages Manager" },
+            //   command: "show-pages",
+            //   togglable: false,
+            // },
+            // {
+            //   id: "views",
+            // },
+            // {
+            //   attributes: { title: "Open Code" },
+            //   className: "fa fa-code",
+            //   command: "grapesjs-custom-code",
+            //   id: "open-code",
+            // },
+            {
+              id: "show-blocks",
+              active: true,
+              className: "fa fa-th-large",
+              command: "show-blocks",
+              attributes: { title: "Open Block Manager" },
+              togglable: false,
+            },
+          ],
+        },
+        {
+          id: "panel-devices",
+          el: ".panel__devices",
+          appendTo: ".panel__tops",
+          className: "myclass",
+          buttons: [
+            {
+              id: "preview-button",
+              className: "fa fa-eye privew panel__tops btn btn-light",
+              command: "sw-visibility",
+              label: "Privew",
+              active: false,
+              attributes: { title: "View" },
+              togglable: false,
+            },
+            {
               id: "device-desktop",
-              className: "fa fa-desktop",
+              className: "fa fa-desktop prewiew panel__tops btn btn-light",
               command: "set-device-desktop",
               active: true,
               attributes: { title: "Desktop View" },
@@ -77,35 +147,50 @@ export default function GrapesjsEditor() {
             },
             {
               id: "device-mobile",
-              className: "fa fa-mobile",
+              className: "fa fa-mobile prewiew panel__tops btn btn-light",
               command: "set-device-mobile",
               attributes: { title: "Mobile View" },
               togglable: false,
             },
             {
-              id: "device-tablate",
-              className: "fa fa-tablet",
+              id: "prewiew",
+              className: "fa fa-tablet prewiew panel__tops btn btn-light",
               command: "set-device-Tablet",
               attributes: { title: "Tablet View" },
               togglable: false,
             },
+            {
+              id: "submit",
+              className: "btn btn-primary panel__tops",
+              label: "save",
+              command: "save-changes",
+              togglable: true,
+            },
+            {
+              id: "publish",
+              className: "btn btn-publish panel__tops",
+              label: "publish",
+              command: "publish-changes",
+              togglable: true,
+            },
+            {
+              id: "undo",
+              className: "fa fa-undo btn btn-light panel__tops",
+              command: "undo",
+              attributes: { title: "Undo" },
+            },
+            {
+              id: "redo",
+              className: "fa fa-repeat btn btn-light panel__tops",
+              command: "redo",
+              attributes: { title: "Redo" },
+            },
           ],
-        },
-        {
-          id: "panel-top",
-          el: ".panel__top",
         },
         {
           id: "basic-actions",
           el: ".panel__basic-actions",
           buttons: [
-            {
-              id: "visibility",
-              active: false, // active by default
-              className: "fa fa-square-o",
-              attributes: { title: "View" },
-              command: "sw-visibility", // Built-in command
-            },
             {
               id: "export",
               className: "fa fa-code",
@@ -113,22 +198,22 @@ export default function GrapesjsEditor() {
               command: "export-template",
               context: "export-template", // For grouping context of buttons from the same panel
             },
-            {
-              id: "show-json",
-              className: "btn-show-json",
-              label: "JSON",
-              context: "show-json",
-              attributes: { title: "json View" },
-              command(editor) {
-                editor.Modal.setTitle("Components JSON")
-                  .setContent(
-                    `<textarea style="width:100%; height: 250px;">
-            ${JSON.stringify(editor.getComponents())}
-          </textarea>`
-                  )
-                  .open();
-              },
-            },
+            //   {
+            //     id: "show-json",
+            //     className: "btn-show-json",
+            //     label: "JSON",
+            //     context: "show-json",
+            //     attributes: { title: "json View" },
+            //     command(editor) {
+            //       editor.Modal.setTitle("Components JSON")
+            //         .setContent(
+            //           `<textarea style="width:100%; height: 250px;">
+            //   ${JSON.stringify(editor.getComponents())}
+            // </textarea>`
+            //         )
+            //         .open();
+            //     },
+            //   },
           ],
         },
         {
@@ -144,64 +229,6 @@ export default function GrapesjsEditor() {
             bc: 0, // Bottom handler
             keyWidth: "flex-basis",
           },
-        },
-        {
-          id: "panel-switcher",
-          el: ".panel__switcher",
-          buttons: [
-            // {
-            //   id: "undo",
-            //   className: "fa fa-undo",
-            //   command: "undo",
-            //   attributes: { title: "Undo" },
-            // },
-            // {
-            //   id: "redo",
-            //   className: "fa fa-repeat",
-            //   command: "redo",
-            //   attributes: { title: "Redo" },
-            // },
-            {
-              id: "show-style",
-              active: true,
-              className: "fa fa-paint-brush",
-              command: "show-styles",
-              attributes: { title: "Open style Manager" },
-              togglable: false,
-            },
-            {
-              id: "show-layers",
-              active: true,
-              className: "fa fa-bars",
-              command: "show-layers",
-              attributes: { title: "Open Layers Manager" },
-              togglable: false,
-            },
-            {
-              id: "show-traits",
-              active: true,
-              className: "fas fa-tools",
-              attributes: { title: "Open Traits Manager" },
-              command: "show-traits",
-              togglable: false,
-            },
-            {
-              id: "show-pages",
-              active: false,
-              className: "fas fa-tools",
-              attributes: { title: "Open Pages Manager" },
-              command: "show-pages",
-              togglable: false,
-            },
-            {
-              id: "show-blocks",
-              active: true,
-              className: "fa fa-th-large",
-              command: "show-blocks",
-              attributes: { title: "Open Block Manager" },
-              togglable: false,
-            },
-          ],
         },
       ],
     },
@@ -421,4 +448,105 @@ export default function GrapesjsEditor() {
       ],
     },
   };
+}
+export function CommandJs() {
+  var editor = grapesjs.init(GrapesjsEditor());
+  // editor.push(Newcommands);
+  editor.Commands.add("show-layers", {
+    getRowEl(editor) {
+      return editor.getContainer().closest(".editor-row");
+    },
+    getLayersEl(row) {
+      return row.querySelector(".layers-container");
+    },
+
+    run(editor, sender) {
+      const lmEl = this.getLayersEl(this.getRowEl(editor));
+      lmEl.style.display = "";
+    },
+    stop(editor, sender) {
+      const lmEl = this.getLayersEl(this.getRowEl(editor));
+      lmEl.style.display = "none";
+    },
+  });
+  editor.Commands.add("show-styles", {
+    getRowEl(editor) {
+      return editor.getContainer().closest(".editor-row");
+    },
+    getStyleEl(row) {
+      return row.querySelector(".styles-container");
+    },
+
+    run(editor, sender) {
+      const smEl = this.getStyleEl(this.getRowEl(editor));
+      smEl.style.display = "";
+    },
+    stop(editor, sender) {
+      const smEl = this.getStyleEl(this.getRowEl(editor));
+      smEl.style.display = "none";
+    },
+  });
+  editor.Commands.add("show-traits", {
+    getTraitsEl(editor) {
+      const row = editor.getContainer().closest(".editor-row");
+      return row.querySelector(".traits-container");
+    },
+    run(editor, sender) {
+      this.getTraitsEl(editor).style.display = "";
+    },
+    stop(editor, sender) {
+      this.getTraitsEl(editor).style.display = "none";
+    },
+  });
+  editor.Commands.add("show-pages", {
+    getTraitsEl(editor) {
+      const row = editor.getContainer().closest(".editor-row");
+      return row.querySelector(".traits-container");
+    },
+    run(editor, sender) {
+      const pageManager = editor.Pages;
+      var newpage = pageManager.add({
+        id: "new-page-id", // without an explicit ID, a random one will be created
+        styles: `.my-class { color: red }`, // or a JSON of styles
+        component: '<div class="my-class">My element</div>', // or a JSON of components
+      });
+      return newpage;
+    },
+    // stop(editor, sender) {
+    //   this.getTraitsEl(editor).style.display = "none";
+    // },
+  });
+  editor.Commands.add("show-blocks", {
+    getTraitsEl(editor) {
+      const row = editor.getContainer().closest(".editor-row");
+      return row.querySelector("#blocks");
+    },
+    run(editor, sender) {
+      this.getTraitsEl(editor).style.display = "";
+    },
+    stop(editor, sender) {
+      this.getTraitsEl(editor).style.display = "none";
+    },
+  });
+  editor.Commands.add("set-device-desktop", {
+    run: (editor) => editor.setDevice("Desktop"),
+  });
+  editor.Commands.add("set-device-mobile", {
+    run: (editor) => editor.setDevice("Mobile"),
+  });
+  editor.Commands.add("set-device-Tablet", {
+    run: (editor) => editor.setDevice("Tablet"),
+  });
+  // const newPage = editor.pageManager.add({
+  //   id: "new-page-id", // without an explicit ID, a random one will be created
+  //   styles: `.my-class { color: red }`, // or a JSON of styles
+  //   component: '<div class="my-class">My element</div>', // or a JSON of components
+  // });
+  // const currentPage = pages[currentIndex];
+  // currentPage.components = editor.getComponents();
+  // currentPage.style = editor.getStyle();
+  // const nextPage = pages[nextIndex];
+  // editor.setComponents(nextPage.components);
+  // editor.setStyle(nextPage.style);
+  // editor.plugins.add("grapesjs-custom-code", customCodePlugin);
 }
