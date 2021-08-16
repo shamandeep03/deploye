@@ -10,6 +10,11 @@ img.emoji {
   background: none !important;
   padding: 0 !important;
 }
+.navbar {
+  padding: 2.5rem 0;
+  background-color: #007bff !important;
+  height: 87px !important;
+}
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
@@ -3910,4 +3915,8 @@ p.p-xl {
 }
 .wpb_animate_when_almost_visible {
   opacity: 1;
+}
+nav#ire2w {
+  background-color: #007bff !important;
+  height: 87px !important;
 }

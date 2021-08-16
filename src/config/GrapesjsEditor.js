@@ -135,7 +135,7 @@ export default function GrapesjsEditor() {
               label: "Privew",
               active: false,
               attributes: { title: "View" },
-              togglable: false,
+              togglable: true,
             },
             {
               id: "device-desktop",
