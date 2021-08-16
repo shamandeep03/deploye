@@ -13,23 +13,9 @@ const Editor = ({ id, Temp }) => {
         <div class="panel__devices" id="my_devices"></div>
       </div>
       <div class="editor-row" style={{ height: "580px" }}>
-        <div
-          id="layers"
-          class="column"
-          style={{
-            flexBasis: "55px",
-            backgroundColor: "rgb(231, 223, 223)",
-          }}
-        >
-          <div class="other_panels">
-            <div class="panel__basic-actions"></div>
-            <div class="panel__switcher"></div>
-            {/* <div
-              class="panel__devices"
-              style={{ display: "flex", flexDirection: "column" }}
-            ></div> */}
-          </div>
-          {/* <div id="blocks"></div> */}
+        <div class="other_panels">
+          <div class="panel__basic-actions"></div>
+          <div class="panel__switcher"></div>
         </div>
         <div class="editor-canvas">
           <div id="gjs2">{Temp}</div>

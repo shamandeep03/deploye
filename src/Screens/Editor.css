@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(231, 223, 223);
+}
 .editor-row {
   height: 700px;
 }
@@ -12,16 +15,15 @@
   height: auto;
   min-height: auto;
 }
-/* .panel__tops {
-  width: 100%;
-  display: flex;
-} */
-.gjs-pn-buttons {
+.panel__tops {
+  margin-left: 1px;
+}
+/* .gjs-pn-buttons {
   align-items: center;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .panel__basic-actions {
   position: initial;
@@ -123,4 +125,14 @@
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+/* .other_panels.gjs-pn-panel.gjs-pn-other_panels.gjs-one-bg.gjs-two-color {
+  margin-left: -25px;
+} */
+/* .bocksbuttob {
+  height: auto;
+  width: 100px;
+}*/
+.gjs-block {
+  width: 100%;
 }
