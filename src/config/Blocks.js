@@ -460,12 +460,6 @@ export default function Block() {
            padding-left: 1.25rem;
            padding-right: 1.25rem;
          }
-   
-         @media (min-width: 1024px) {
-           .lg\:w-6\/12 {
-             width: 50%;
-           }
-         }
          .text-primary {
            --tw-text-opacity: 1;
            color: rgba(79, 70, 229, var(--tw-text-opacity));
@@ -477,10 +471,6 @@ export default function Block() {
            font-size: 3rem;
            line-height: 1;
          }
-         @media (min-width: 768px) {
-           .md\:w-4\/12 {
-             width: 33.3333%;
-           }
          }
        </style>
          `,

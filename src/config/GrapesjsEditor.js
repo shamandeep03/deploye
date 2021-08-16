@@ -180,8 +180,6 @@ export default function GrapesjsEditor() {
 export function CommandJs() {
   var editor = grapesjs.init(GrapesjsEditor());
   // editor.push(Newcommands);
-  var blockManager = editor.BlockManager;
-
   editor.Commands.add("show-layers", {
     getRowEl(editor) {
       return editor.getContainer().closest(".editor-row");
