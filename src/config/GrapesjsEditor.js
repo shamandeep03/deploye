@@ -176,13 +176,13 @@ export default function GrapesjsEditor() {
             {
               id: "undo",
               className: "fa fa-undo btn btn-light panel__tops",
-              command: "undo",
+              command: (e) => e.runCommand("core:undo"),
               attributes: { title: "Undo" },
             },
             {
               id: "redo",
               className: "fa fa-repeat btn btn-light panel__tops",
-              command: "redo",
+              command: (e) => e.runCommand("core:redo"),
               attributes: { title: "Redo" },
             },
           ],
