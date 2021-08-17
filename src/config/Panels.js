@@ -1,27 +1,21 @@
 export default function Panels() {
   return [
     {
-      id: "other_panels",
-      el: ".other_panels",
-      buttons: [],
-    },
-    {
-      id: "panel-devices",
-      el: ".panel__devices",
-      appendTo: ".panel__tops",
-      className: "myclass",
+      id: "basic-actions",
+      el: ".navbar-nav",
       buttons: [
         {
           id: "show-style",
           active: true,
-          className: "fa fa-paint-brush btn btn-light panel__tops prewiew",
+          className:
+            "fa fa-paint-brush btn btn-light panel__tops prewiew nav-item",
           command: "show-styles",
           attributes: { style: "display:none" },
           togglable: false,
         },
         {
           id: "preview-button",
-          className: "fa fa-eye privew panel__tops btn btn-light",
+          className: "fa fa-eye privew panel__tops btn btn-light nav-item",
           command: "sw-visibility",
           label: "Privew",
           active: false,
@@ -30,7 +24,7 @@ export default function Panels() {
         },
         {
           id: "device-desktop",
-          className: "fa fa-desktop prewiew panel__tops btn btn-light",
+          className: "fa fa-desktop prewiew panel__tops btn btn-light nav-item",
           command: "set-device-desktop",
           active: true,
           attributes: { title: "Desktop View" },
@@ -38,48 +32,35 @@ export default function Panels() {
         },
         {
           id: "device-mobile",
-          className: "fa fa-mobile prewiew panel__tops btn btn-light",
+          className: "fa fa-mobile prewiew panel__tops btn btn-light nav-item",
           command: "set-device-mobile",
           attributes: { title: "Mobile View" },
           togglable: false,
         },
         {
           id: "prewiew",
-          className: "fa fa-tablet prewiew panel__tops btn btn-light",
+          className: "fa fa-tablet prewiew panel__tops btn btn-light nav-item",
           command: "set-device-Tablet",
           attributes: { title: "Tablet View" },
           togglable: false,
         },
         {
-          id: "submit",
-          className: "btn btn-primary panel__tops",
-          label: "save",
-          command: "save-changes",
-          togglable: true,
-        },
-        {
-          id: "publish",
-          className: "btn btn-publish panel__tops",
-          label: "publish",
-          command: "publish-changes",
-          togglable: true,
-        },
-        {
           id: "undo",
-          className: "fa fa-undo btn btn-light panel__tops prewiew",
+          className: "fa fa-undo btn btn-light panel__tops prewiew nav-item",
           command: (e) => e.runCommand("core:undo"),
           attributes: { title: "Undo" },
         },
         {
           id: "redo",
-          className: "fa fa-repeat btn btn-light panel__tops prewiew",
+          className: "fa fa-repeat btn btn-light panel__tops prewiew nav-item",
           command: (e) => e.runCommand("core:redo"),
           attributes: { title: "Redo" },
         },
         {
           id: "show-style",
           active: true,
-          className: "fa fa-paint-brush btn btn-light panel__tops prewiew",
+          className:
+            "fa fa-paint-brush btn btn-light panel__tops prewiew nav-item",
           command: "show-styles",
           attributes: { title: "Open style Manager" },
           togglable: false,
@@ -87,7 +68,7 @@ export default function Panels() {
         {
           id: "show-layers",
           active: true,
-          className: "fa fa-bars btn btn-light panel__tops prewiew",
+          className: "fa fa-bars btn btn-light panel__tops prewiew nav-item",
           command: "show-layers",
           attributes: { title: "Open Layers Manager" },
           togglable: false,
@@ -95,7 +76,7 @@ export default function Panels() {
         {
           id: "show-traits",
           active: true,
-          className: "fa fa-cog btn btn-light panel__tops prewiew",
+          className: "fa fa-cog btn btn-light panel__tops prewiew nav-item",
           attributes: { title: "Open Traits Manager" },
           command: "show-traits",
           togglable: false,
@@ -120,17 +101,32 @@ export default function Panels() {
         {
           id: "show-blocks",
           active: true,
-          className: "fa fa-th-large btn btn-light panel__tops prewiew",
+          className:
+            "fa fa-th-large btn btn-light panel__tops prewiew nav-item",
           command: "show-blocks",
           attributes: { title: "Open Block Manager" },
           togglable: false,
         },
         {
           id: "export",
-          className: "fa fa-code btn btn-light panel__tops prewiew",
+          className: "fa fa-code btn btn-light panel__tops prewiew nav-item",
           attributes: { title: "Code View" },
           command: "export-template",
           context: "export-template", // For grouping context of buttons from the same panel
+        },
+        {
+          id: "submit",
+          className: "btn btn-primary panel__tops nav-item",
+          label: "save",
+          command: "save-changes",
+          togglable: true,
+        },
+        {
+          id: "publish",
+          className: "btn btn-publish panel__tops nav-item",
+          label: "publish",
+          command: "publish-changes",
+          togglable: true,
         },
       ],
     },

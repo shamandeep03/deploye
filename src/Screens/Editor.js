@@ -9,14 +9,31 @@ const Editor = ({ id, Temp }) => {
   });
   return (
     <div className="container-fluid p-0">
-      <div class="panel__tops">
-        <div class="panel__devices" id="my_devices"></div>
-      </div>
-      <div class="editor-row" style={{ height: "580px" }}>
-        <div class="other_panels">
-          <div class="panel__basic-actions"></div>
-          <div class="panel__switcher"></div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+            Home
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav "></ul>
+          </div>
         </div>
+      </nav>
+      {/* <div class="panel__top">
+        <div class="panel__basic-actions"></div>
+      </div> */}
+      <div class="editor-row" style={{ height: "580px" }}>
         <div class="editor-canvas">
           <div id="gjs2">{Temp}</div>
         </div>

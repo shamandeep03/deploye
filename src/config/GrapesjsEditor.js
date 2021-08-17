@@ -23,14 +23,14 @@ export default function GrapesjsEditor() {
       appendTo: ".styles-container",
     },
     canvas: {
-      styles: [
-        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
-      ],
-      scripts: [
-        "https://code.jquery.com/jquery-3.3.1.slim.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
-        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
-      ],
+      canvas: {
+        scripts: [
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
+        ],
+        styles: [
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css",
+        ],
+      },
     },
     assetManager: {
       assets: [
@@ -208,10 +208,12 @@ export function CommandJs() {
     run(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
       smEl.style.display = "";
+      // document.getElementsByClassName("panel__right").style.display = "display";
     },
     stop(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
       smEl.style.display = "none";
+      //document.getElementsByClassName("panel__right").style.display = "none";
     },
   });
   editor.Commands.add("show-traits", {
