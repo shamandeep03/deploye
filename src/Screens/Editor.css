@@ -166,6 +166,7 @@ body {
     position: absolute;
     /* overflow-y: auto; */
     width: 100%;
+    z-index: 1;
     display: flex;
   }
   .styles-container {

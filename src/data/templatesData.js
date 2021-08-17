@@ -20,11 +20,6 @@ export const data = [
     image: "../images/4.jpg",
   },
   {
-    name: "FifthTemplate",
-    id: "5",
-    image: "../images/5.jpg",
-  },
-  {
     name: "sixthTemplate",
     id: "6",
     image: "../images/5.jpg",
