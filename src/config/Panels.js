@@ -67,7 +67,7 @@ export default function Panels() {
         },
         {
           id: "show-layers",
-          active: true,
+          active: false,
           className: "fa fa-bars btn btn-light panel__tops prewiew nav-item",
           command: "show-layers",
           attributes: { title: "Open Layers Manager" },
@@ -75,7 +75,7 @@ export default function Panels() {
         },
         {
           id: "show-traits",
-          active: true,
+          active: false,
           className: "fa fa-cog btn btn-light panel__tops prewiew nav-item",
           attributes: { title: "Open Traits Manager" },
           command: "show-traits",
@@ -100,7 +100,7 @@ export default function Panels() {
         // },
         {
           id: "show-blocks",
-          active: true,
+          active: false,
           className:
             "fa fa-th-large btn btn-light panel__tops prewiew nav-item",
           command: "show-blocks",
