@@ -167,11 +167,19 @@ body {
     /* overflow-y: auto; */
     width: 100%;
     z-index: 1;
+    margin-top: 432px;
+
     display: flex;
   }
   .styles-container {
     width: inherit;
   }
+}
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+  z-index: 9;
 }
 /* }
 @media only screen and (min-width: 375px) { */
