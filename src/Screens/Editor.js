@@ -23,7 +23,7 @@ const Editor = ({ id, Temp }) => {
         } else {
           content.style.display = "block";
           var elemsa = document.getElementsByClassName("content");
-          for (var j = 0; j < elems.length; j += 1) {
+          for (var j = 0; j < elemsa.length; j += 1) {
             elemsa[j].style.display = "block";
           }
           document.getElementById("gjs2").style.display = "block";
