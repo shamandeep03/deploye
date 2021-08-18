@@ -7,10 +7,10 @@ const Editor = ({ id, Temp }) => {
   useEffect(() => {
     CommandJs();
     var coll = document.getElementsByClassName("collapsible");
-    var i;
+    var a;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
+    for (a = 0; a < coll.length; a++) {
+      coll[a].addEventListener("click", function () {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.display === "block") {
@@ -22,9 +22,9 @@ const Editor = ({ id, Temp }) => {
           document.getElementById("gjs2").style.display = "block";
         } else {
           content.style.display = "block";
-          var elems = document.getElementsByClassName("content");
-          for (var i = 0; i < elems.length; i += 1) {
-            elems[i].style.display = "block";
+          var elemsa = document.getElementsByClassName("content");
+          for (var j = 0; j < elems.length; j += 1) {
+            elemsa[j].style.display = "block";
           }
           document.getElementById("gjs2").style.display = "block";
         }
