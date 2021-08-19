@@ -45,6 +45,13 @@ export default function Panels() {
           togglable: false,
         },
         {
+          id: "full screen",
+          className:
+            "fa fa-arrows-alt btn btn-light panel__tops prewiew nav-item",
+          command: (e) => e.runCommand("core:fullscreen"),
+          attributes: { title: "full screen" },
+        },
+        {
           id: "undo",
           className: "fa fa-undo btn btn-light panel__tops prewiew nav-item",
           command: (e) => e.runCommand("core:undo"),

@@ -16,16 +16,12 @@ const Editor = ({ id, Temp }) => {
         if (content.style.display === "block") {
           content.style.display = "none";
           var elems = document.getElementsByClassName("content");
-          for (var i = 0; i < elems.length; i += 1) {
-            elems[i].style.display = "none";
-          }
+          elems[0].style.display = "none";
           document.getElementById("gjs2").style.display = "block";
         } else {
           content.style.display = "block";
           var elemsa = document.getElementsByClassName("content");
-          for (var j = 0; j < elemsa.length; j += 1) {
-            elemsa[j].style.display = "block";
-          }
+          elemsa[0].style.display = "block";
           document.getElementById("gjs2").style.display = "block";
         }
       });
@@ -59,26 +55,21 @@ const Editor = ({ id, Temp }) => {
       </div> */}
       <div class="editor-row d-flex " style={{ height: "580px" }}>
         <div class="editor-canvas">
-          <button type="button" style={{ display: "none" }} class="collapsible">
-            Open Collapsible
-          </button>
+        
           <div id="gjs2">{Temp}</div>
         </div>
-
-        <div class="content">
-          <div class="panel__right">
-            <div class="layers-container" style={{ textAlign: "center" }}>
-              Layers Manager
-            </div>
-            <div class="styles-container" style={{ textAlign: "center" }}>
-              Style Manager
-            </div>
-            <div class="traits-container" style={{ textAlign: "center" }}>
-              Traits Manager
-            </div>
-            <div id="blocks" style={{ textAlign: "center" }}>
-              Block Manager
-            </div>
+        <div class="panel__right">
+          <div class="layers-container" style={{ textAlign: "center" }}>
+            Layers Manager
+          </div>
+          <div class="styles-container" style={{ textAlign: "center" }}>
+            Style Manager
+          </div>
+          <div class="traits-container" style={{ textAlign: "center" }}>
+            Traits Manager
+          </div>
+          <div id="blocks" style={{ textAlign: "center" }}>
+            Block Manager
           </div>
         </div>
       </div>

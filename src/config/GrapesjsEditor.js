@@ -180,6 +180,43 @@ export default function GrapesjsEditor() {
 export function CommandJs() {
   var editor = grapesjs.init(GrapesjsEditor());
   // editor.push(Newcommands);
+  // define this event handler after editor is defined
+  // like in const editor = grapesjs.init({ ...config });
+
+  editor.on("component:selected", () => {
+    // whenever a component is selected in the editor
+
+    // set your command and icon here
+    const commandToAdd = "tlb-settime";
+    const commandIcon = "fa fa-arrow-right";
+
+    // get the selected componnet and its default toolbar
+    const selectedComponent = editor.getSelected();
+    const defaultToolbar = selectedComponent.get("toolbar");
+
+    // check if this command already exists on this component toolbar
+    const commandExists = defaultToolbar.some(
+      (item) => item.command === commandToAdd
+    );
+
+    // if it doesn't already exist, add it
+    if (!commandExists) {
+      selectedComponent.set({
+        toolbar: [
+          ...defaultToolbar,
+          {
+            attributes: { class: commandIcon },
+            command: (ed) => ed.runCommand("core:component-next", { force: 1 }),
+          },
+          {
+            attributes: { class: "fa fa-arrow-left" },
+            command: (ed) => ed.runCommand("core:component-prev", { force: 1 }),
+          },
+        ],
+      });
+    }
+  });
+
   editor.Commands.add("show-layers", {
     getRowEl(editor) {
       return editor.getContainer().closest(".editor-row");
