@@ -203,18 +203,44 @@ export function CommandJs() {
     if (!commandExists) {
       selectedComponent.set({
         toolbar: [
-          ...defaultToolbar,
+          //...defaultToolbar,
           {
-            attributes: { class: commandIcon },
+            attributes: { class: "fa fa-clone", title: "copy" },
+            command: (ed) => ed.runCommand("tlb-clone", { force: 1 }),
+          },
+          {
+            attributes: { class: "fas fa-paste", title: "paste" },
+            command: (ed) => ed.runCommand("core:paste", { force: 1 }),
+          },
+          {
+            attributes: { class: commandIcon, title: "next" },
             command: (ed) => ed.runCommand("core:component-next", { force: 1 }),
           },
           {
-            attributes: { class: "fa fa-arrow-left" },
+            attributes: { class: "fa fa-arrow-left", title: "previous" },
             command: (ed) => ed.runCommand("core:component-prev", { force: 1 }),
+          },
+          {
+            attributes: { class: "fa fa-trash-o", title: "delete" },
+            command: (ed) =>
+              ed.runCommand("core:component-delete", { force: 1 }),
           },
         ],
       });
     }
+  });
+  editor.BlockManager.add("Cards", {
+    label: "Cards",
+    content: "<h1>Put your title here</h1>",
+    category: {
+      label: "MyCategory",
+      order: 1,
+      open: false,
+    },
+    attributes: {
+      title: "Insert Cards",
+      class: "fa fa-cube",
+    },
   });
 
   editor.Commands.add("show-layers", {
