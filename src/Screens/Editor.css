@@ -26,7 +26,10 @@ body {
   height: auto;
   min-height: auto;
 }
-
+.navbar {
+  position: static;
+  left: 0;
+}
 .editor-row {
   display: flex;
   justify-content: flex-start;
@@ -137,7 +140,10 @@ body {
 .editor-canvas {
   flex-grow: 1;
 }
-
+.gjs-color-warn {
+  /* color: #ffca6f; */
+  fill: black;
+}
 .panel__right {
   flex-basis: 230px;
   position: relative;

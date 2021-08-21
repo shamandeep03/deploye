@@ -3,6 +3,7 @@ import "../Screens/Editor.css";
 import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
+import Scripdata from "./Script";
 //import plugin from "grapesjs-component-code-editor";
 //import 'grapesjs/dist/css/grapes.min.css';
 //import "grapesjs-component-code-editor/dist/grapesjs-component-code-editor.min.css";
@@ -24,9 +25,7 @@ export default function GrapesjsEditor() {
     },
     canvas: {
       canvas: {
-        scripts: [
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
-        ],
+        scripts: Scripdata(),
         styles: [
           "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css",
         ],
@@ -229,20 +228,6 @@ export function CommandJs() {
       });
     }
   });
-  editor.BlockManager.add("Cards", {
-    label: "Cards",
-    content: "<h1>Put your title here</h1>",
-    category: {
-      label: "MyCategory",
-      order: 1,
-      open: false,
-    },
-    attributes: {
-      title: "Insert Cards",
-      class: "fa fa-cube",
-    },
-  });
-
   editor.Commands.add("show-layers", {
     getRowEl(editor) {
       return editor.getContainer().closest(".editor-row");

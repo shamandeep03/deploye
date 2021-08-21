@@ -1,38 +1,20 @@
 import React, { useEffect } from "react";
 import { CommandJs } from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
+import { MainJs } from "./Mainscript";
 //import customCodePlugin from "grapesjs-custom-code";
 //import Newcommands from "../config/commands/index.js";
 const Editor = ({ id, Temp }) => {
   useEffect(() => {
     CommandJs();
-    var coll = document.getElementsByClassName("collapsible");
-    var a;
-
-    for (a = 0; a < coll.length; a++) {
-      coll[a].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-          var elems = document.getElementsByClassName("content");
-          elems[0].style.display = "none";
-          document.getElementById("gjs2").style.display = "block";
-        } else {
-          content.style.display = "block";
-          var elemsa = document.getElementsByClassName("content");
-          elemsa[0].style.display = "block";
-          document.getElementById("gjs2").style.display = "block";
-        }
-      });
-    }
+    MainJs();
   });
   return (
     <div className="container-fluid p-0">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            Home
+            Grapesjs
           </a>
           <button
             className="navbar-toggler"
@@ -55,7 +37,6 @@ const Editor = ({ id, Temp }) => {
       </div> */}
       <div class="editor-row d-flex " style={{ height: "580px" }}>
         <div class="editor-canvas">
-        
           <div id="gjs2">{Temp}</div>
         </div>
         <div class="panel__right">
