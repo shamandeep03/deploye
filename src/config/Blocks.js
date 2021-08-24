@@ -12,6 +12,13 @@ import imf11 from "./blockimg/client4.png";
 import imf12 from "./blockimg/client5.png";
 import imf13 from "./blockimg/price2.png";
 import imf14 from "./blockimg/price3.png";
+import imf15 from "./blockimg/price4.png";
+import imf16 from "./blockimg/price5.png";
+import imf17 from "./blockimg/test2.png";
+import imf18 from "./blockimg/test3.png";
+import imf19 from "./blockimg/test4.png";
+import imf20 from "./blockimg/test5.png";
+import imf21 from "./blockimg/step2.png";
 export default function Block() {
   return [
     {
@@ -2713,7 +2720,804 @@ export default function Block() {
       },
     },
     {
-      id: "Testimonials section",
+      label: `<img src=${imf15} width="100%" height="auto" />`,
+      content: `<section
+      class="py-28 bg-primary-50"
+      id="pricing"
+      eid="4635a53f-9d31-47d4-8828-2792dd4b901f"
+      style=""
+    >
+      <div class="container" eid="a57306ab-49d5-4fae-b3f7-ab7510c88dc3">
+        <div class="row" eid="5ba96bff-ffdf-4cf8-a9bd-2e31679dca0f">
+          <div
+            class="col md:w-10/12 lg:w-8/12 mx-auto text-center mb-6"
+            eid="bc0364fc-eafb-4ae7-871d-39b98b463a68"
+          >
+            <h2
+              class="display-6 font-semibold mb-3"
+              eid="65d4e44f-5cc5-4c75-89cf-ec0af2a96d6f"
+            >
+              Our Pricing
+            </h2>
+            <p eid="632fa333-4033-4da7-a703-80a44082dc80">
+              No additional costs. Pay a fixed monthly fee we handle everything
+              for you.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col flex gap-x-0 justify-center"
+            eid="6ea7c405-f86f-4c4a-93a1-a5e644dd16ec"
+          >
+            <button
+              class="s btn-primary rounded-none"
+              id="monthly-pricing-button"
+              eid="9583b49a-ca9e-4140-add5-d565a796b0fc"
+            >
+              Monthly
+            </button>
+            <button
+              class="btns btn-outline-primary rounded-none"
+              id="annual-pricing-button"
+              eid="f6f526d9-4ebe-4c00-98a2-1ec0f3a490d9"
+            >
+              Annual
+            </button>
+          </div>
+        </div>
+        <div class="row" eid="8a245655-98e1-45f7-a45e-c25a4b5a1d9d">
+          <div
+            class="col md:w-4/12 my-12"
+            eid="c17fd01c-7628-4698-a380-2772daf7dcef"
+          >
+            <div
+              class="bg-white rounded"
+              eid="f828b3f0-3a73-4509-a976-5ad6fca4fe7e"
+            >
+              <div
+                class="py-4 text-center"
+                eid="1a0e2307-e52d-46ef-9b20-260a4600e135"
+              >
+                <h2
+                  class="m-0 text-3xl font-semibold"
+                  eid="0163ff33-ca77-4b67-9b19-d333a88715f8"
+                >
+                  Free
+                </h2>
+              </div>
+              <div
+                class="flex-auto py-4 text-center"
+                eid="dfd4cca5-5a41-4ac1-b6f5-dd11f3e548c1"
+              >
+                <h2
+                  class="text-5xl font-semibold mb-4"
+                  eid="9bfbf1be-be93-41f3-a485-dc5be86300f8"
+                >
+                  $<span
+                    data-monthly="0"
+                    data-annual="0"
+                    eid="7b3557f6-29f8-4d3a-bb60-3a878f64826a"
+                    >0</span
+                  >
+                  <span
+                    class="lead text-2xl"
+                    eid="d840d133-ffda-43ab-b5fd-940bb233aee5"
+                    >/mo</span
+                  >
+                </h2>
+                <hr />
+                <div
+                  class="h-0.5 bg-dark w-9/12 mx-auto"
+                  eid="efdb78f7-42c3-499c-b64c-a341482f9411"
+                ></div>
+              </div>
+              <div class="py-5" eid="db4470b6-9eac-411d-b916-aa5c3dfe93a1">
+                <ul
+                  class="flex flex-col text-center gap-y-4"
+                  eid="489ecc41-27bf-4f43-9e41-4a550e6139b6"
+                >
+                  <li eid="018a0a4c-7ce6-4664-8452-fc29684c0c73">
+                    Unlimited Websites
+                  </li>
+                  <li eid="7456c8d8-8a02-4501-95db-16abb5fa010b">50 Blocks+</li>
+                  <li eid="13e950bd-5cec-4eb5-9310-b3c725961148">
+                    5 Templates
+                  </li>
+                  <li eid="fdbc6fd3-6315-413d-817c-b558c813c56b">
+                    Single Page
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="flex-auto p-6 text-center"
+                eid="dcd257db-7dad-4816-84a7-db955aef9f40"
+              >
+                <a
+                  class="btns btn-lg block w-full btn-secondary"
+                  href="javascript:void(0);"
+                  eid="b998f4e5-6ee1-4a18-bceb-9a044c28490b"
+                  >Use Acme for Free</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="col md:w-4/12 my-12"
+            eid="d8680746-195b-43c3-9b84-4f033fbd1ade"
+          >
+            <div
+              class="bg-white rounded"
+              eid="c9db8f28-cd6b-4f5c-8d9d-f0e53c7e53f4"
+            >
+              <div
+                class="py-4 text-center"
+                eid="0cd1ee76-f7a2-4175-8e3c-b4211ac4100e"
+              >
+                <h2
+                  class="m-0 text-3xl font-semibold"
+                  eid="9d6b3d4b-e750-4127-9341-1fa497c6808e"
+                >
+                  Launch
+                </h2>
+              </div>
+              <div
+                class="flex-auto py-4 text-center"
+                eid="3839249f-cb86-4ff8-a224-3dbb28aa0bec"
+              >
+                <h2
+                  class="text-5xl font-semibold mb-4"
+                  eid="5d61ed66-37d5-4427-826e-8b7ae1dcebc9"
+                >
+                  $<span
+                    data-monthly="49"
+                    data-annual="42"
+                    eid="070e9d9d-6971-4d54-b5d9-1ecd84a18f94"
+                    >49</span
+                  >
+                  <span
+                    class="text-2xl"
+                    eid="3ac2ab00-2f94-42c9-9a90-fad4130d615d"
+                    >/mo</span
+                  >
+                </h2>
+                <hr />
+                <div
+                  class="h-0.5 bg-dark w-9/12 mx-auto"
+                  eid="7f925aba-f916-4eb1-82f2-8c7a138705c9"
+                ></div>
+              </div>
+              <div class="py-5" eid="b69709a1-258a-42a2-a4a3-27eb2a95a40a">
+                <ul
+                  class="flex flex-col text-center gap-y-4"
+                  eid="e3aa09e2-29ac-4890-9213-e3c4003f0346"
+                >
+                  <li
+                    class="font-semibold"
+                    eid="5693c5ae-dda4-4147-8050-bce06e3d8cce"
+                  >
+                    Everything in Free, Plus<br
+                      eid="4c73e6b4-7f7a-430f-bf3f-c5962a187c64"
+                    />
+                  </li>
+                  <li eid="aa986b1b-3a48-4400-8019-abdedf678e9d">
+                    3 Custom Domains Websites
+                  </li>
+                  <li eid="7f6c7d50-79b4-4f37-b83c-5eaa4a3c301d">Pro Blocks</li>
+                  <li eid="6aba17f8-a21c-41d4-a250-269436a89cc4">
+                    Remove Branding
+                  </li>
+                  <li eid="13857448-2f4d-4e0b-809a-5de6e745258f">
+                    Site Export
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="flex-auto p-6 text-center"
+                eid="e9ddbca1-df0c-4d8e-b126-12593371732d"
+              >
+                <a
+                  class="btns btn-lg block w-full btn-primary"
+                  href="javascript:void(0);"
+                  eid="9820e879-0793-4dfe-919a-431c724f6af7"
+                  >Get Started Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="col md:w-4/12 my-12"
+            eid="8908ab4c-88f0-4392-982f-618e0ed00b4b"
+          >
+            <div
+              class="bg-white rounded"
+              eid="28498f03-cdc4-4c79-a734-ae79f822f657"
+            >
+              <div
+                class="py-4 text-center"
+                eid="e23ea68c-b45e-450f-bba7-67f2cec9f317"
+              >
+                <h2
+                  class="m-0 text-3xl font-semibold"
+                  eid="9d13aa7c-f296-43a8-9a01-1f047e0c9440"
+                >
+                  Scale
+                </h2>
+              </div>
+              <div
+                class="flex-auto py-4 text-center"
+                eid="5c77921d-0437-48e5-8fae-f430ecc6f085"
+              >
+                <h2
+                  class="text-5xl font-semibold mb-4"
+                  eid="cce86175-e61f-449f-bc81-e7450eaaf0c2"
+                >
+                  $<span
+                    data-monthly="99"
+                    data-annual="83"
+                    monthly="99"
+                    eid="80ffa220-85c7-4279-b660-29dee849f463"
+                    >99</span
+                  >
+                  <span
+                    class="text-2xl"
+                    eid="5555dbdb-3e55-4594-ba82-20d72f689286"
+                    >/mo</span
+                  >
+                </h2>
+                <hr />
+                <div
+                  class="h-0.5 bg-dark w-9/12 mx-auto"
+                  eid="8d7e993b-a730-4928-9ac4-2905c59eafd3"
+                ></div>
+              </div>
+              <div class="py-5" eid="201893c0-6375-42d2-9a12-36974cf8f462">
+                <ul
+                  class="flex flex-col text-center gap-y-4"
+                  eid="0e0949d5-bcec-4bdc-a4b6-dc9fac8f3c98"
+                >
+                  <li
+                    class="font-semibold"
+                    eid="914afcb8-65d0-43d7-88a4-92d7f4d0567e"
+                  >
+                    Everything in Launch, Plus<br
+                      eid="c74c7139-6fc7-4d2d-bbe5-19d59b35b01d"
+                    />
+                  </li>
+                  <li eid="719d1d78-95b6-4b01-b8af-833e7d5e00d4">
+                    A/B Testing
+                  </li>
+                  <li eid="43c3ab5f-c270-4f8d-8595-ccf1386d0fd7">
+                    AI Adivisor/Editor
+                  </li>
+                  <li eid="86d0806d-7e54-4b9b-9a77-7133d5917b55">
+                    Segmented Pages
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="flex-auto p-6 text-center"
+                eid="d2f6c267-62c3-43a6-bd86-d5f21edbf362"
+              >
+                <a
+                  class="btns btn-lg block w-full btn-primary"
+                  href="javascript:void(0);"
+                  eid="55670a82-45bf-43bb-b12a-e765ea180f57"
+                  >Get Started Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .btn-secondary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+      hr {
+        /* margin: 1rem 0; */
+        padding-right: 10px;
+        padding-left: 10px;
+        /* width: auto; */
+        width: 75%;
+        color: inherit;
+        background-color: black;
+        border: 0;
+        /* opacity: .25; */
+      }
+      .flex-col {
+        flex-direction: column;
+        list-style: outside none none;
+      }
+      .mb-3 {
+        margin-bottom: 0.75rem;
+      }
+      .font-semibold {
+        font-weight: 600;
+      }
+      .display-6 {
+        font-size: 2.5rem;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      a {
+        /* color: #0d6efd; */
+        text-decoration: none;
+      }
+      .flex {
+        display: flex;
+      }
+      .btns {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        border-width: 0px;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter;
+        /* // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+        transition-duration: 200ms;
+        flex-shrink: 0;
+        font-weight: 600;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.25rem;
+      }
+      .container {
+        background-color: aliceblue;
+      }
+      #i4zyri {
+        color: white;
+    }
+    </style>`,
+      category: {
+        label: "pricing section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert pricing section",
+      },
+    },
+    {
+      label: `<img src=${imf16} width="100%" height="auto" />`,
+      content: `
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />  
+      <section
+      class="py-28"
+      id="pricing"
+      eid="65691ff6-ed9e-4cba-a1c8-58e85fc1fac4"
+      style=""
+    >
+      <div class="container" eid="b7a1d5cf-e286-4ff1-8fbb-ca582f254ff6">
+        <div class="row" eid="5ccd54bc-e737-49f8-92c5-c6dc221262a5">
+          <div
+            class="col md:w-10/12 lg:w-8/12 mx-auto text-center mb-6"
+            eid="6a663b85-e06a-4900-ba7a-801f1de23544"
+          >
+            <h2
+              class="display-6 font-semibold mb-3"
+              eid="e1afb671-91df-4a3a-93c2-f2f52f007be0"
+            >
+              Our Pricing
+            </h2>
+            <p eid="70f118d7-9331-4c78-b200-00506ceee420">
+              No additional costs. Pay a fixed monthly fee we handle everything
+              for you.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col flex gap-x-0 justify-center"
+            eid="f3eda89d-6408-4bb4-b76c-736447c447d7"
+            style=""
+          >
+            <button
+              class="btns btn-primary rounded-none"
+              id="monthly-pricing-button"
+              eid="3e2f5aec-8ec3-4534-8ab4-03b75dee7d5f"
+              style=""
+            >
+              Monthly
+            </button>
+            <button
+              class="btns btn-outline-primary rounded-none"
+              id="annual-pricing-button"
+              eid="fa6d9316-00bc-418f-b242-bdc88b4109a1"
+            >
+              Annual
+            </button>
+          </div>
+        </div>
+        <div class="row mt-12" eid="3d9cc2c6-340e-4384-8514-0b900657982c">
+          <div class="col md:w-4/12" eid="30941eb2-613b-47b0-bae3-0b9655b309b4">
+            <div
+              class="card p-6 bg-primary-50"
+              eid="88d2625d-794e-49ac-baf4-f2bbc999e304"
+            >
+              <p
+                class="font-semibold display-6 text-dark mb-3 h5"
+                eid="a75c7a79-0c49-4926-b874-89675ce6a356"
+              >
+                Startup
+              </p>
+              <h2
+                class="display-5 font-semibold mb-3"
+                eid="af8bb55f-7f7d-4b05-bf07-ea4d240d075b"
+              >
+                $<span
+                  data-monthly="29"
+                  data-annual="24"
+                  eid="89e00a5a-497b-455f-8e3b-d9307439f8a9"
+                  >29</span
+                >
+                <span
+                  class="text-2xl"
+                  eid="6dd3fa29-e7a2-47fc-af27-e8d562db09ee"
+                  >/mo</span
+                >
+              </h2>
+              <p class="text-muted" eid="c9eef79a-4949-439f-95fd-230b5d2ff906">
+                Consectetur adipiscing elit. Curabitur bibendum.
+              </p>
+              <ul
+                class="ml-6 fa-ul text-muted leading-8 mb-6 !ml-6"
+                eid="711a6f21-fb8c-455e-a3e5-4105577ff225"
+              >
+                <li eid="bbf452ca-f6a7-4f14-b2ea-f93a15946229">
+                  <span
+                    class="fa-li text-dark"
+                    eid="974be1f0-b42f-415c-a941-30fe5d83f504"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="32a59692-0ee8-4748-85e7-650df224646c"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="1b829859-aae3-4d9e-a310-1d5c4deb3135">
+                  <span class="fa-li" eid="e0cd3e40-a3d6-445c-a850-1643ebd3140d"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="479f5d44-905b-4331-8743-70ba839f3129"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="5b786e24-f34c-406e-b59a-8c63025f59dd">
+                  <span class="fa-li" eid="45303613-d13f-4968-aef8-7f2eb11ba027"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="42e8ab69-f853-4db0-8495-e3a9b05f025e"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="5a2d07f8-4774-4cd6-8aa5-52a044b98459">
+                  <span class="fa-li" eid="1d6d7d04-4b5b-4519-a2a3-ebb5a6696884"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="54df378c-ca0b-4475-8367-4fd325e84d27"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="cf6d248b-f82c-4034-b253-77ada343fecb">
+                  <span class="fa-li" eid="6bf0ca2a-ad19-4c26-b9cf-5c20c0bd5297"
+                    ><i
+                      class="fas fa-times text-dark"
+                      eid="717be7b2-8f40-4a2a-80f4-d902c62bf04c"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="312ff189-baca-475a-bd47-81e721c7d469">
+                  <span class="fa-li" eid="6a772129-8494-4b95-b3e9-b49e4f3dce84"
+                    ><i
+                      class="fas fa-times text-dark"
+                      eid="d15ffe2a-1c29-4edb-955e-070e23af3a1b"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="32ca6719-2271-4b1a-928b-4d558afe1c44">
+                  <span class="fa-li" eid="4a596dff-20aa-4c45-9ed3-2c8462846b90"
+                    ><i
+                      class="fas fa-times text-dark"
+                      eid="d181806a-c7e4-42b7-a604-18df4038b550"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+              </ul>
+              <button
+                class="btns btn-ghost-primary block w-full btn-lg bg-white"
+                eid="ee6e3b60-94b3-4b25-966c-4768fe3a6148"
+              >
+                Get Started Now
+              </button>
+            </div>
+          </div>
+          <div class="col md:w-4/12" eid="8e2ea106-27b7-4744-b5c7-f68dff5219ff">
+            <div
+              class="card text-white p-6 bg-primary"
+              eid="38769dd8-7798-4ca6-bf7c-d440b0d108a9"
+            >
+              <p
+                class="font-semibold display-6 mb-3 h5"
+                eid="84903721-2db3-4287-96b6-80c31fbea417"
+              >
+                Growth
+              </p>
+              <h2
+                class="display-5 font-semibold mb-3"
+                eid="43683a2b-d57d-4df5-95aa-b91c4955b4d3"
+              >
+                $<span
+                  data-monthly="99"
+                  data-annual="83"
+                  eid="e9fd2795-077b-4c3d-a7b4-04f77663988a"
+                  >99</span
+                >
+                <span
+                  class="text-2xl"
+                  eid="72d56346-0ba0-4c59-a1b7-3c38295938ef"
+                  >/mo</span
+                >
+              </h2>
+              <p eid="1830c907-4c51-44df-85b7-72a8080102e0">
+                Consectetur adipiscing elit. Curabitur bibendum.<br
+                  eid="0015094d-0da7-4449-b9b6-7313d798276c"
+                />
+              </p>
+              <ul
+                class="ml-6 fa-ul leading-8 mb-6 !ml-6"
+                eid="7ba174b5-d2ff-4b92-8122-ff00e46f980d"
+              >
+                <li eid="d0e78c7c-eb6f-47f9-832b-86d05f7e6c3a">
+                  <span class="fa-li" eid="acc3b2e8-a496-479f-9c13-6d0af001d9ba"
+                    ><i
+                      class="fas fa-check text-white"
+                      eid="12794c36-ecd0-4436-8be6-5d1e6ba9ea4a"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="2622dedc-a4ad-44cf-badc-a869cde47de7">
+                  <span class="fa-li" eid="e795dc3e-fa49-4430-a090-b3aa13b90209"
+                    ><i
+                      class="fas fa-check text-white"
+                      eid="3436d745-3c3f-4c03-89df-fdbc3abf49ea"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="975a0e90-dd4a-4515-93a7-90b72d0c50cb">
+                  <span class="fa-li" eid="1ed3ac47-29d5-4cbc-beb9-4312cd5179e3"
+                    ><i
+                      class="fas fa-check text-white"
+                      eid="054cb715-8117-4586-9920-4fcfc30cde01"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="d931ffa5-d30b-4bd3-8c84-4bf6f0568757">
+                  <span class="fa-li" eid="c52be1b2-c344-4fad-bba1-9caed01b2295"
+                    ><i
+                      class="fas fa-check text-white"
+                      eid="8b91cf80-eee3-4982-98e4-3966ec516f6c"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="13d16e2f-1e69-461b-9e1f-09cb75c95a8e">
+                  <span class="fa-li" eid="3da4fcd6-d6ce-4739-8187-20c62fddfd2a"
+                    ><i
+                      class="fas fa-check text-white"
+                      eid="ed17a73e-ff13-4012-b565-20f0eb13a4e9"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="1e91fe39-d8f0-42d4-8218-b7f4a965c04f">
+                  <span class="fa-li" eid="cff72dca-b5fe-4d5c-8cc1-6ff71c1b5a8c"
+                    ><i
+                      class="fas fa-times text-white"
+                      eid="7565f07e-2618-4993-b050-006d7e29aab2"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="25fc8260-d485-45e0-a1f8-a08177c770e9">
+                  <span class="fa-li" eid="48b7cddf-a16f-4102-b781-e00146cef236"
+                    ><i
+                      class="fas fa-times text-white"
+                      eid="f93a3ad2-c383-450c-aefa-22231fdf14df"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+              </ul>
+              <button
+                class="
+                  btns
+                  bg-white
+                  block
+                  w-full
+                  border-none
+                  btn-lg btn-ghost-dark
+                "
+                eid="30af8c9a-c5b1-4e00-8929-0e988ec2b905"
+              >
+                Get Started Now
+              </button>
+            </div>
+          </div>
+          <div class="col md:w-4/12" eid="b5d6e52b-e86d-40ba-b583-e053615e2f0a">
+            <div
+              class="card p-6 bg-primary-50"
+              eid="f700ac1d-5920-4769-809d-428c0f8a1060"
+            >
+              <p
+                class="font-semibold display-6 mb-3 h5"
+                eid="e9ff4655-d91b-4be3-ae3e-c242466a7883"
+              >
+                Scale
+              </p>
+              <h2
+                class="display-5 font-semibold mb-3"
+                eid="960d79d5-5ffd-410c-aaaf-a3b9135ca160"
+              >
+                $<span
+                  data-monthly="299"
+                  data-annual="239"
+                  eid="2b1c4f4c-9341-4010-b126-efd38f7d9cba"
+                  >299</span
+                >
+                <span
+                  class="text-2xl"
+                  eid="46fd0eaf-9ba5-4e2e-9c9d-7021133663ac"
+                  >/mo</span
+                >
+              </h2>
+              <p class="text-muted" eid="994bd635-ee57-459a-ad96-a56469fb2f42">
+                Consectetur adipiscing elit. Curabitur bibendum.<br
+                  eid="7ccf9445-73d9-4def-8b3a-ea7c57e982f3"
+                />
+              </p>
+              <ul
+                class="ml-6 fa-ul text-muted leading-8 mb-6 !ml-6"
+                eid="226709d9-f23e-42b9-bdbe-f1c88e4d5b3b"
+              >
+                <li eid="341a7a0d-321f-4b77-baa1-4173fc402745">
+                  <span class="fa-li" eid="f855bafd-d1eb-4020-9257-6f7973ae98cc"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="f33253fb-6754-4a79-b7d9-7b25c74dfb1d"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="863083c7-0a7b-4548-92ab-02328985a793">
+                  <span class="fa-li" eid="86020412-1f66-431d-bf82-20fe154e6663"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="7e96435d-17ce-4818-8803-0d9fbce294be"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="5039199a-a6cb-420d-9371-d51d27576a85">
+                  <span class="fa-li" eid="0f5f61bc-8ee5-4b1b-a2d6-7fbb1df04123"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="f25fa74b-413e-4735-b6ae-4f233c541ef9"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="c3028dde-cb39-4339-b8f6-dc6cd956b0d3">
+                  <span class="fa-li" eid="54784466-caa0-4ada-8166-35b487c7dee7"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="c496e3b9-a507-42be-bc0c-5a0829156e3e"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="0c6ca1b6-18d8-40fe-bbb1-b52921f2ff52">
+                  <span class="fa-li" eid="9d0dbef9-7ea2-45e1-98ff-f7bf68481f60"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="ee6dfc49-8532-4e87-b97a-b5f938a3148d"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="4fb79678-df49-4a1e-9b34-7b740f4a3465">
+                  <span class="fa-li" eid="d53d10d1-4b24-4ee0-8cbf-726465f43cd5"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="a07bad04-452e-4608-880e-938236ada7a5"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+                <li eid="d6ee72e1-8fc8-4042-b22f-86c59db95804">
+                  <span class="fa-li" eid="c234fbdd-f2de-46a7-a888-172e60754ead"
+                    ><i
+                      class="fas fa-check text-dark"
+                      eid="f355351c-f234-4a59-af97-b9c7323dff1f"
+                    ></i> </span
+                  >Lorem ipsum dolor sit
+                </li>
+              </ul>
+              <button
+                class="btns btn-ghost-primary block w-full btn-lg bg-white"
+                eid="d041579e-46f3-4240-8db5-a2e8a370fcb8"
+              >
+                Get Started Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .justify-center {
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+      .flex {
+        display: flex;
+      }
+      .block {
+        display: block;
+        margin: auto;
+      }
+      .bg-white {
+        background-color: white;
+      }
+      .btns {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        /* border-width: 0px; */
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
+        flex-shrink: 0;
+        font-weight: 600;
+        padding: 0.5rem 0.75rem;
+        border: none;
+      }
+      .container {
+        background-color: aliceblue;
+      }
+      .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        text-align: center;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+      }
+      .bg-primary-50 {
+        --tw-bg-opacity: 1;
+        background-color: rgba(238, 242, 255, var(--tw-bg-opacity));
+      }
+    </style>`,
+      category: {
+        label: "pricing section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert pricing section",
+      },
+    },
+    {
       label: `<img src=${imf5} width="100%" height="auto" />`,
       content: `
         <link
@@ -2784,7 +3588,537 @@ export default function Block() {
       },
     },
     {
-      id: "steps section",
+      label: `<img src=${imf17} width="100%" height="auto" />`,
+      content: ` <section
+      class="py-28"
+      id="testimonials"
+      eid="37228686-4a89-4f8f-a8f2-10fed5ba6882"
+      style=""
+    >
+      <div class="container" eid="6c0df620-7eba-4de2-9a64-437361453d79">
+        <div
+          class="row text-center justify-center pb-12"
+          eid="e2a8b37d-332d-49d8-b885-37c08776d3b4"
+          style=""
+        >
+          <div
+            class="col md:w-10/12 lg:w-8/12 xl:w-7/12"
+            eid="d4460c77-c254-4e4c-be89-065276790007"
+          >
+            <h1 eid="46e97283-2941-400b-9d80-94360c98ce6b">Testimonials</h1>
+            <p
+              class="text-lg font-light"
+              eid="694797bd-206e-4b16-81b4-3cc0ff952657"
+              style=""
+            >
+              Sed sodales tincidunt mi ut aliquam. Nulla facilisi. Quisque
+              elementum dui et dapibus pellentesque. Aliquam erat volutpat.
+              Morbi interdum, neque vitae iaculis ultrices, turpis ipsum
+              dignissim leo.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row items-center justify-center"
+          eid="baaea1f6-1148-41eb-a1f5-23284511610c"
+        >
+          <div class="col" eid="6cbb027f-3fd2-4a7b-8c55-32f1f76b30d4">
+            <div
+              class="
+                relative
+                flex flex-col
+                min-w-0
+                rounded
+                break-words
+                border
+                bg-white
+                border-1 border-grey-light
+                p-12
+              "
+              eid="1cd8f844-c19a-46e1-ae77-db80ea1c642a"
+            >
+              <div class="row" eid="6fc5b35c-dd04-46a0-a896-93c7aeee7608">
+                <div
+                  class="row items-center justify-center"
+                  eid="c4ea4c52-47a8-47ba-b6b0-9f7bc07110a5"
+                  style=""
+                >
+                  <div
+                    class="
+                      col
+                      w-10/12
+                      sm:w-6/12
+                      md:w-4/12
+                      lg:w-3/12
+                      xl:w-2/12
+                      m-auto
+                    "
+                    eid="9795c24e-2908-4291-b10d-cca90cf72e01"
+                  >
+                    <img
+                      alt="product"
+                      class="max-w-full h-auto rounded-full"
+                      src="https://templates.versoly.com/assets/img/headshot-woman-1.jpg"
+                      eid="7b09e7b1-7d90-43d1-bb22-3fdfbaeb4afc"
+                    />
+                  </div>
+                  <div
+                    class="col md:w-8/12 ml-auto mr-auto mt-6 md:mt-0"
+                    eid="ad085c6a-07c6-4703-af11-a02cbbfaa963"
+                  >
+                    <p
+                      class="text-lg font-light"
+                      eid="215d2755-c817-4dee-abfa-b0dbeb46e321"
+                    >
+                      &amp;quot;Pellentesque iaculis vestibulum convallis.
+                      Vestibulum nec risus tincidunt, eleifend lacus a, rhoncus
+                      elit. Ut tellus urna, malesuada eu faucibus nec, consequat
+                      vel elit. Curabitur nec tristique nunc.&amp;quot;
+                    </p>
+                    <p
+                      class="h3 mt-6 lg:mt-12"
+                      eid="5c719a0f-b71a-432a-8137-4c8fc46c8066"
+                    >
+                      <strong eid="1f26ddbf-4fa8-49be-8b8e-08177eca3ab4"
+                        >Rhiana Bostock</strong
+                      >
+                    </p>
+                    <p eid="d73d7bd2-d2d9-48eb-9fd1-75f0e948b857">
+                      <em eid="ba61eea4-acd5-47c7-b535-19b4be4405df"
+                        >Co-founder at ACME</em
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .rounded-full {
+        border-radius: 9999px;
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+      }
+      .h-auto {
+        height: 300px !important;
+      }
+      .col {
+        width: 100%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+      .mr-auto {
+        margin-right: auto;
+      }
+      .ml-auto {
+        margin-left: auto;
+      }
+      p.text-lg.font-light {
+        margin: auto;
+        padding: initial;
+        padding-bottom: 69px;
+        padding-top: 43px;
+      }
+    </style>`,
+      category: {
+        label: "Testimonials section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert Testimonials section",
+      },
+    },
+    {
+      label: `<img src=${imf18} width="100%" height="auto" />`,
+      content: `
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+      <section
+      class="py-28"
+      id="testimonials"
+      eid="bf4098d5-3f12-4285-b042-b4b4f07df334"
+      style=""
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col lg:w-2/12 text-center mb-4">
+            <img
+              class="max-w-full h-auto rounded-full"
+              src="https://templates.versoly.com/assets/img/headshot-woman-1.jpg"
+              width="200"
+            />
+          </div>
+          <div class="col lg:w-10/12">
+            <p class="text-lg font-light font-semibold">
+              <i class="fas fa-quote-left mr-2"></i> Pellentesque iaculis
+              vestibulum convallis. Vestibulum nec risus tincidunt, eleifend
+              lacus a, rhoncus elit. Ut tellus urna, malesuada eu faucibus nec,
+              consequat vel elit. Curabitur nec tristique nunc. Pellentesque
+              iaculis vestibulum convallis. Vestibulum nec risus tincidunt,
+              eleifend lacus a, rhoncus elit. Ut tellus urna, malesuada.<i
+                class="fas fa-quote-right ml-2"
+              ></i>
+            </p>
+            <p class="font-normal text-muted">
+              Rhiana Bostock - Head of Marketing at ACME
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .rounded-full {
+        border-radius: 9999px;
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+      }
+
+     
+      .rounded-full {
+        border-radius: 9999px;
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+      }
+      .max-w-full {
+        max-width: 100%;
+      }
+      .h-auto {
+        height: 250px !important;
+      }
+      .py-28 {
+        padding-bottom: 7rem;
+        padding-top: 7rem;
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        border: 0px solid rgb(229, 231, 235);
+      }
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      p {
+        margin-bottom: 0.75rem;
+      }
+    </style>`,
+      category: {
+        label: "Testimonials section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert Testimonials section",
+      },
+    },
+    {
+      label: `<img src=${imf20} width="100%" height="auto" />`,
+      content: `  <section
+      class="py-28"
+      id="testimonials"
+      eid="f5c4fe93-0e8f-46b0-b301-67f46fd43408"
+    >
+      <div class="container" eid="0eaffe27-82bf-47d2-8313-8208c4f304cc">
+        <div
+          class="row text-center justify-center pb-12"
+          eid="9404809a-b54f-43b1-89b1-ffdd6512d202"
+        >
+          <div
+            class="col md:w-10/12 lg:w-8/12 xl:w-7/12"
+            eid="a6a8b6dc-0fc7-4efa-9c68-93deaedce34a"
+          >
+            <h1 eid="71068036-8aac-44e5-8216-7cc8534aea9e" style="">
+              Testimonials
+            </h1>
+            <p
+              class="text-lg font-light"
+              eid="f884161a-fb9e-4f65-bc60-6c5d5c311c37"
+              style=""
+            >
+              Sed sodales tincidunt mi ut aliquam. Nulla facilisi. Quisque
+              elementum dui et dapibus pellentesque. Aliquam erat volutpat.
+              Morbi interdum, neque vitae iaculis ultrices, turpis ipsum
+              dignissim leo.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row items-center justify-center"
+          eid="3c785344-675a-4b51-8104-fc7a8d8f0401"
+          style=""
+        >
+          <div
+            class="col lg:w-9/12 xl:w-6/12"
+            eid="e9f1b570-df2e-49c5-b88a-7641ee453d9b"
+          >
+            <div
+              class="
+                relative
+                flex flex-col
+                min-w-0
+                rounded
+                break-words
+                border
+                bg-white
+                border-1 border-grey-light
+                p-12
+              "
+              eid="f068d577-c7b4-47e2-a359-c7d2c05bf26d"
+              style=""
+            >
+              <div class="row" eid="242827d8-4531-43ee-896e-9fb5a005b6b1">
+                <div
+                  class="
+                    col
+                    w-8/12
+                    sm:w-6/12
+                    md:w-4/12
+                    xl:w-3/12
+                    ml-auto
+                    mr-auto
+                  "
+                  eid="ba4810c1-7df3-4bcf-b373-337ce5fdf2bb"
+                >
+                  <img
+                    alt="product"
+                    class="max-w-full h-auto rounded"
+                    src="https://templates.versoly.com/assets/img/headshot-woman-1.jpg"
+                    eid="014df583-24b7-40f4-8b0f-e4641a77b2fb"
+                  />
+                </div>
+                <div
+                  class="col md:w-8/12 mt-6 md:mt-0"
+                  eid="3c6aa1b8-f18e-447a-a04a-4697e4cbb500"
+                >
+                  <p
+                    class="text-lg font-light"
+                    eid="7865572d-56fd-4644-bfc9-f3967c726e8d"
+                    style=""
+                  >
+                    &amp;quot;Pellentesque iaculis vestibulum convallis.
+                    Vestibulum nec risus tincidunt, eleifend lacus a, rhoncus
+                    elit. Ut tellus urna, malesuada eu faucibus nec, consequat
+                    vel elit. Curabitur nec tristique nunc.&amp;quot;
+                  </p>
+                  <p
+                    class="h3 mt-6 xl:mt-12"
+                    eid="22e67f43-0eb8-49ac-8047-f8a151bf7a2c"
+                  >
+                    <strong eid="3d5005eb-7728-4e27-ae58-bdc913d9ffbd"
+                      >Rhiana Bostock</strong
+                    >
+                  </p>
+                  <p eid="11af603e-7cee-4648-af9f-b3bfb157afda">
+                    <em eid="dba45730-f975-434c-9bf5-9d8daacb1c25"
+                      >Co-founder</em
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col lg:w-9/12 xl:w-6/12 mt-6 xl:mt-0"
+            eid="a2bdf9ee-cfea-457a-8bfd-61954e0fd124"
+          >
+            <div
+              class="
+                relative
+                flex flex-col
+                min-w-0
+                rounded
+                break-words
+                border
+                bg-white
+                border-1 border-grey-light
+                p-12
+              "
+              eid="a61dbdfb-9070-4ba0-b844-463425c03d82"
+              style=""
+            >
+              <div class="row" eid="7753c579-a9d8-471d-9461-67d9dcc0434f">
+                <div
+                  class="
+                    col
+                    w-8/12
+                    sm:w-6/12
+                    md:w-4/12
+                    xl:w-3/12
+                    ml-auto
+                    mr-auto
+                  "
+                  eid="e9755621-ce4a-40ab-b64c-b3c6b17ed34e"
+                >
+                  <img
+                    alt="product"
+                    class="max-w-full h-auto rounded"
+                    src="https://templates.versoly.com/assets/img/headshot-man-1.jpg"
+                    eid="f1cff108-0cac-49b3-86af-f82945610d9b"
+                  />
+                </div>
+                <div
+                  class="col md:w-8/12 mt-6 md:mt-0"
+                  eid="bd3b71b4-ad82-408e-b89b-ceea3e2840d4"
+                  style=""
+                >
+                  <p
+                    class="text-lg font-light"
+                    eid="d8d857bc-6188-4631-8c6e-a4ce672dbaff"
+                  >
+                    &amp;quot;Fusce sed est nec purus condimentum tincidunt.
+                    Curabitur felis justo, imperdiet eget vehicula vel, congue
+                    sed augue. Suspendisse et eleifend odio, vitae tempor magna.
+                    Mauris sed lectu.&amp;quot;
+                  </p>
+                  <p
+                    class="h3 mt-6 xl:mt-12"
+                    eid="baaabad5-107a-4d9e-91c4-d64307555263"
+                  >
+                    <strong eid="fa07a34b-675e-4fd2-b3bb-7da0d9f1c1cd"
+                      >Corey Jacobson</strong
+                    >
+                  </p>
+                  <p eid="67c2215b-3310-4414-bb47-7878ab7fe592">
+                    <em eid="630648de-de7c-4305-a1cc-32d209066cb7"
+                      >Head of Marketing</em
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .row {
+        text-align: left;
+      }
+      .h-auto {
+        height: 250px !important;
+      }
+    </style>`,
+      category: {
+        label: "Testimonials section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert Testimonials section",
+      },
+    },
+    {
+      label: `<img src=${imf19} width="100%" height="auto" />`,
+      content: `  <section
+      class="py-28"
+      id="testimonials"
+      eid="11b42067-7e4e-4e77-a0f0-bc8434a88159"
+      style=""
+    >
+      <div
+        class="container split-bg-primary p-12 rounded"
+        eid="36b4539b-4df5-4493-858d-8371b7ebb644"
+        style=""
+      >
+        <div
+          class="row px-12 pt-6 pb-12"
+          eid="87f8eaab-a73a-4477-ad97-05bcb5ad3f45"
+          style=""
+        >
+          <div class="col lg:w-6/12" eid="027c03fe-5983-46bf-8824-857cbf91e903">
+            <img
+              src="https://d1pnnwteuly8z3.cloudfront.net/images/dafc1e05-b0e8-4c6d-b375-4a62333bbd5a/fbe43566-c33b-4464-98c5-12d447d48e86.jpeg"
+              alt="Happy Customers"
+              class="max-w-full h-auto rounded shadow"
+              eid="a69293ac-cad6-41ab-8cc4-8f73de6acf29"
+            />
+          </div>
+          <div class="col lg:w-6/12" eid="af8ea761-c4b2-4618-ad40-31c6888c0676">
+            <div
+              class="lg:pl-12 mt-6"
+              eid="5c959293-28e3-4241-8f22-48c884c9ae6e"
+            >
+              <h4
+                class="font-semibold"
+                eid="b46ef57a-f840-4519-b404-5d69ff5d5b09"
+              >
+                &amp;quot;I really enjoyed using this platform it benefited me a
+                lot and I was able to save a lot of time and money than other
+                software I had used.&amp;quot;
+              </h4>
+              <span
+                class="font-semibold"
+                eid="d9d6ab3d-cf50-4ad4-9cac-72dcb4bb71c2"
+                >John K. Jeffers</span
+              ><br eid="95a58a0f-091b-47d2-8f32-50a2f64fb022" /><small
+                eid="58ceb963-b9d4-4530-805e-200b2fe3f206"
+                >ACME Corporation</small
+              >
+              <br />
+              <button
+                class="btn btn-secondary btn-lg mt-4 block"
+                eid="4bfb60a1-10e9-49d2-8fce-e6be1d6a34bf"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .pb-12 {
+        padding-bottom: 3rem;
+      }
+      .pt-6 {
+        padding-top: 1.5rem;
+      }
+      .px-12 {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+      .row {
+        display: flex;
+        flex-flow: row wrap;
+        margin-left: calc(-1.25rem);
+        margin-right: calc(-1.25rem);
+      }
+      .h-auto {
+        height: 300px !important;
+      }
+      .pl-12 {
+        padding-left: 3rem;
+      }
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+    </style>`,
+      category: {
+        label: "Testimonials section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert Testimonials section",
+      },
+    },
+    {
       label: `<img src=${imf7} width="100%" height="auto" />`,
       content: `
         <div class="container">
@@ -2908,6 +4242,198 @@ export default function Block() {
         }
       </style>
         `,
+      category: {
+        label: "steps section",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "Insert steps section",
+      },
+    },
+    {
+      label: `<img src=${imf21} width="100%" height="auto" />`,
+      content: `
+      <section
+      id="steps"
+      class="py-28"
+      eid="e4051642-bd72-4d6f-a3c9-ac1028f2681d"
+      style=""
+    >
+      <div class="container" eid="61e30388-d659-43dd-b81a-9dacfab29bfa">
+        <div class="row mb-12" eid="f7c28032-798d-4311-ad74-b36937c841b0">
+          <div
+            class="col md:w-8/12 lg:w-7/12 mx-auto text-center"
+            eid="66e33fff-f2b4-45a0-bdf7-de8b765fde13"
+          >
+            <h2
+              class="display-4 font-semibold text-center"
+              eid="006f96b9-7800-44e1-9e89-d789a819656b"
+            >
+              Simple, Secure and Fast
+            </h2>
+            <p eid="2e5a6ffe-e54a-4de6-9a81-e327900432c4">
+              Create a beautiful landing page that converts effortlessly, while
+              we handle the design and hosting for you.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row items-center"
+          eid="29fcd769-fe43-4390-99fa-db688fbab4d8"
+        >
+          <div
+            class="col md:w-6/12 relative"
+            eid="18d385e5-a7a1-4d57-848e-93b7c3fed7ad"
+          >
+            <div
+              class="absolute top-0 left-11 w-0.5 bg-gray-500 h-full"
+              eid="60956271-f566-4ea1-ae08-098ab3120d0c"
+            ></div>
+            <div class="flex" eid="0c605bb9-e478-471b-8f47-3a1c4317ac74">
+              <div eid="0f1ae82e-ee96-4fcd-beca-f72154dab612">
+                <button
+                  class="
+                    rounded-full
+                    bg-primary
+                    h-12
+                    w-12
+                    text-xl text-white
+                    font-semibold
+                    z-[1]
+                    mx-auto
+                    relative
+                  "
+                  eid="d0a489b6-ea26-452f-b26b-dfeee3e99eca"
+                >
+                  1
+                </button>
+              </div>
+              <div class="ml-5 mt-1" eid="5f1165bf-e489-422b-a2f3-4da3ae2d6a14">
+                <h3 class="mb-3" eid="ece60701-b849-4159-a326-a8eaa4c4a847">
+                  Pick a Template
+                </h3>
+                <p eid="0f82506c-5db3-44d3-ad02-7e19f7294ffc">
+                  We have designed SaaS templates that are focused on converting
+                  visitors to users.
+                </p>
+              </div>
+            </div>
+            <div class="flex mt-8" eid="0cae145e-83d5-43c0-bfcb-eb7725f245ea">
+              <div eid="3db31fb9-7366-43ff-8c3c-d1f2de4d40ce">
+                <button
+                  class="
+                    rounded-full
+                    bg-primary
+                    h-12
+                    w-12
+                    text-xl text-white
+                    font-semibold
+                    z-[1]
+                    mx-auto
+                    relative
+                  "
+                  eid="8a342423-b0c5-49e4-8aa6-d12e8d146fc9"
+                >
+                  2
+                </button>
+              </div>
+              <div class="ml-5 mt-1" eid="22bcda99-17df-4e63-86ef-60c2d6544d8f">
+                <h3 class="mb-3" eid="f5eef540-70e3-4b8d-970c-c8a2bc3fc1ce">
+                  Customize It
+                </h3>
+                <p eid="577436ad-91cf-4c08-baf2-ec0f0b9070f8">
+                  We have a simple but powerful editor that will allow you to
+                  make changes quickly.<br
+                    eid="9f7f66b3-3506-4862-b47f-80eb7d180e79"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="flex mt-8" eid="8bddd8f9-6175-44b7-ae75-232ed0d4d980">
+              <div eid="60cf0fe1-cf0c-4bbf-848d-e11cde769561">
+                <button
+                  class="
+                    rounded-full
+                    bg-primary
+                    h-12
+                    w-12
+                    text-xl text-white
+                    font-semibold
+                    z-[1]
+                    mx-auto
+                    relative
+                  "
+                  eid="109dd174-6f9e-47be-9d64-053a06543c08"
+                >
+                  3
+                </button>
+              </div>
+              <div class="ml-5 mt-1" eid="63be9fe9-a90a-47ef-8fd7-9064a571b0c9">
+                <h3 class="mb-3" eid="a1e2b166-8c26-4d0a-96cd-a989d883bee7">
+                  Publish Site
+                </h3>
+                <p eid="a1b80d0d-960d-4b22-a78a-43f39a52c0bc">
+                  We handle hosting for you, we use Amazon Web Services (AWS)
+                  for all our services.<br
+                    eid="894b65ad-ecae-4969-8136-bfe08b4bccb0"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col md:w-6/12" eid="09930560-ea22-45fe-a677-c06bc2a746ea">
+            <img
+              class="max-w-full h-auto mx-auto"
+              src="https://cdn.versoly.com/img/website_setup.svg"
+              title="Cross Care Seeker"
+              alt="Take Charge of the Care You Receive"
+              eid="922dd430-60d0-435d-9d95-529c1f903b5b"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .rounded-full {
+        border-radius: 9999px;
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+      }
+      .font-semibold {
+        font-weight: 600;
+      }
+      .w-12 {
+        width: 3rem;
+      }
+      .h-12 {
+        height: 3rem;
+      }
+      .relative {
+        position: relative;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .mx-auto {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .text-white {
+        color: white;
+      }
+      .bg-primary {
+        background-color: rgba(79, 70, 229, var(--tw-bg-opacity));
+        --tw-bg-opacity: 1;
+        border: none;
+      }
+      .h-auto {
+        height: 400px !important;
+      }
+    </style>`,
       category: {
         label: "steps section",
         order: 1,

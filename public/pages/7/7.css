@@ -1,0 +1,321 @@
+img.wp-smiley,
+img.emoji {
+  display: inline !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 1em !important;
+  width: 1em !important;
+  margin: 0 0.07em !important;
+  vertical-align: -0.1em !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.banner-area {
+  background: url("") no-repeat scroll center 0 / cover;
+}
+.blog .banner-area {
+  background: url(https://droitthemes.com/wp/appart/demo2/wp-content/uploads/sites/2/2018/05/pexels-photo-1042143.jpeg)
+    no-repeat scroll center 0 / cover;
+}
+
+/* .navbar-expand-lg.navbar.shrink .get-btn:hover {
+  border-color: !important;
+} */
+.price .pricing-box .pricing-header,
+.price .pricing-box:hover .pricing-header,
+.subscribe_area_two .subcribes.input-group .btn-submit,
+.n_banner_btn,
+.app-details .app-icon:before,
+.faq_accordian_two .card:before,
+.b_features_icon .hover_color,
+.price_box_two .purchase_btn_two:before {
+  background-image: -moz-linear-gradient(180deg, 0%, 100%);
+  background-image: -webkit-linear-gradient(180deg, 0%, 100%);
+  background-image: -ms-linear-gradient(180deg, 0%, 100%);
+}
+
+footer.footer-area {
+  background: url() no-repeat scroll center center/cover;
+}
+
+.footer-five
+  .footer-top
+  .footer_sidebar
+  .widget.widget_social
+  .social-icon
+  li
+  a:hover,
+.footer-top .footer_sidebar .widget.about_us_widget .social_icon li:hover i,
+.footer-top .footer_sidebar .widget.widget_contact ul li .fleft a:hover,
+.widget.widget_pages ul li a:hover,
+.footer_sidebar ul li a:hover,
+.footer-five .footer_bottom a:hover,
+.footer-top
+  .footer_sidebar
+  .widget.widget_twitter
+  .tweets
+  li
+  .tweets-text
+  a:hover {
+  color: #03daf6 !important;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+.navbar-expand-lg.navbar .navbar-nav li > a {
+  font-family: Poppins;
+  line-height: 15px;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  font-size: 14px;
+  font-display: swap;
+}
+.navbar .navbar-nav .menu-item {
+  margin-top: 0px;
+  margin-right: 40px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.get-btn {
+  font-family: Poppins;
+  line-height: 14px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  font-display: swap;
+}
+.get-btn,
+.nav_fluid .get-btn {
+  padding-top: 15px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+.get-btn,
+.nav_fluid .get-btn {
+  color: #00bade;
+}
+.get-btn,
+.nav_fluid .get-btn {
+  background: #ffffff;
+}
+.get-btn:hover,
+.nav_fluid .get-btn:hover {
+  color: #ffffff;
+}
+.get-btn:hover,
+.nav_fluid .get-btn:hover {
+  background: #00bade;
+}
+nav#fixed-top.shrink .get-btn:hover,
+nav#fixed-top.shrink.nav_fluid .get-btn:hover {
+  color: #ffffff;
+}
+nav#fixed-top.shrink .get-btn:hover,
+nav#fixed-top.shrink.nav_fluid .get-btn:hover {
+  background: #00bade;
+}
+nav#fixed-top.shrink .get-btn:hover,
+nav#fixed-top.shrink.nav_fluid .get-btn:hover {
+  border-color: #00bade;
+}
+.banner-area:before {
+  background: rgba(0, 0, 0, 0.6);
+}
+.banner-area {
+  padding-top: 240px;
+  padding-right: 0px;
+  padding-bottom: 187px;
+  padding-left: 0px;
+}
+.footer-five .footer-top {
+  background: #2a2a2a;
+}
+.footer-five .footer_bottom {
+  background: #242424;
+}
+.footer_sidebar p,
+.footer_sidebar .widget_recent_comments ul li,
+.footer_sidebar .widget_recent_comments ul li a,
+.footer_sidebar a.rsswidget,
+.footer_sidebar .rssSummary,
+.footer-widget .tagcloud a,
+.footer-widget cite,
+.footer-widget .widget_rss span.rss-date,
+.footer_sidebar .widget_recent_entries li a,
+.footer-five
+  .footer-top
+  .footer_sidebar
+  .widget.widget_social
+  .social-icon
+  li
+  a,
+.footer_sidebar .widget.widget_nav_menu ul li a,
+.footer_sidebar .widget.widget_meta ul li a,
+.footer_sidebar .widget.widget_pages ul li a,
+.footer_sidebar .widget.widget_archive ul li a,
+.footer_sidebar .widget.widget_categories ul li a,
+.footer-top .footer_sidebar .widget.widget_contact ul li .fleft,
+.footer-five .footer-top .footer_sidebar .widget.widget_contact ul li .fleft a,
+.footer-five .footer-top .footer_sidebar .widget.widget_contact ul li i,
+.footer-top .footer_sidebar .widget.widget_twitter .tweets li .tweets-text {
+  color: #c9ccdb;
+}
+.footer-five .footer_bottom,
+.footer_bottom a {
+  color: #757887;
+}
+.footer-five .footer_bottom a {
+  color: #b1b1b1;
+}
+.footer-five .footer-top .footer_sidebar .widget .widget_title_two {
+  color: #ffffff;
+}
+.more_features .media .media-left i,
+.sale_product_item.pr_grid .pr_details h5:hover,
+.product-categories li a:before,
+.product-categories .cat-item > a:hover,
+.demo-video .video-promo a:hover,
+.price-icon i,
+.purchase-btn,
+.features-area-six .feature-five-item .round,
+.features-area-six .feature-five-item .round2 i:before,
+.features_content_three .media .media-left .icon,
+.footer-top .footer_sidebar .widget.about_us_widget .social_icon li:hover i,
+.footer-top .footer_sidebar .widget.widget_contact ul li .fleft a:hover,
+.footer-top .footer_sidebar .widget.widget_instagram span a:hover,
+.footer-top
+  .footer_sidebar
+  .widget.widget_twitter
+  .tweets
+  li
+  .tweets-text
+  a:hover,
+.description_tab.nav-item.active a,
+.additional_information_tab.nav-item.active a,
+.reviews_tab.nav-item.active a,
+.footer_bottom a:hover,
+.promo-button .banner_btn,
+.play-btn,
+.apps_button a,
+.team_member:hover h2,
+.promo-inner-right .overview-details .learn-btn-two,
+a:hover,
+.ex_features_item i,
+.hero-content .banner_btn.btn-transparent:hover,
+.learn_btn,
+.try:hover,
+.apps_button.white a:hover,
+.hero-content .banner_btn.btn-white,
+.navbar-expand-lg.navbar .navbar-nav li.submenu .dropdown-menu li:hover > a,
+.sub_btn,
+.b_features_icon,
+.post-widget .media .media-body ul li a:hover i,
+.post-widget .media .media-body ul li a:hover,
+.read-more-btn,
+.tweets-widget .tweets li a:hover,
+.categories-widget .c-list li a:hover,
+.read-more-btn:hover,
+.blog-section .blog-items:hover h2,
+.post-widget .media .media-body .tn_tittle:hover,
+.blog-section .blog-items .post-info li a:hover,
+.post_box_four .blog-text .date li a:hover,
+.post_box .blog-text:hover a.read_btn,
+.sidebar-widget ul li a:hover,
+.navbar-expand-lg.navbar.shrink .get-btn,
+.price_box_two:hover .rate,
+.price_box_two .purchase_btn_two,
+.b_features_item:hover h3,
+.testimonial_area_two .carousel-control-prev:hover,
+.testimonial_area_two .carousel-control-next:hover,
+.navbar-expand-lg.navbar.shrink .navbar-nav .nav-item a.active,
+.navbar-expand-lg.navbar.shrink .navbar-nav .nav-item.current-menu-item > a,
+.reviews_tab.nav-item.active a,
+.navbar-expand-lg.navbar.shrink .navbar-nav .nav-item a:hover {
+  color: #00bade;
+}
+.testimonial-area .slick-dots li.slick-active button,
+.product_details .cart_button .cart_btn,
+.tinv-wraper.tinv-wishlist:hover,
+.additional_information_tab.nav-item.active a,
+.woocommerce #review_form #respond p input,
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.pagination a:hover,
+.pagination a.active,
+.navbar-expand-lg.navbar.shrink .navbar-nav li a span.cart,
+.demo-video .video-promo a,
+.tab_content a,
+.color-b:before,
+.apps_button a:hover,
+.owl-dots .owl-dot.active,
+.team_member .content .social a:hover,
+.promo-inner-right .overview-details .learn-btn-two:hover,
+.price .pricing-box.active:hover .purchase-btn,
+.learn_btn:hover,
+.price .pricing-box:hover .purchase-btn,
+.learn-btn-two:hover,
+.learn-btn-two,
+.features-area3 .features-tab li a:hover,
+.features-area3 .features-tab li a:focus,
+.learn-btn-two,
+.search .page-content a.home_btn:hover,
+.appart-search .home_btn:hover,
+.features-area3 .features-tab li a.active,
+.appart-search .form-wrapper .btn,
+.price_icon:before,
+.sub_btn:hover {
+  background: #00bade;
+}
+.demo-video .video-promo a:hover,
+.apps_button a,
+.play-btn,
+.learn_btn,
+.owl-dots .owl-dot,
+.features-area3 .features-tab li a.active,
+.features-area3 .features-tab li a:hover,
+.features-area3 .features-tab li a:focus,
+.appart-search .home_btn,
+.search .page-content a.home_btn,
+.sub_btn,
+.b_features_icon,
+.app-details .app-icon,
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.pagination a:hover,
+.pagination a.active,
+.price_box_two .purchase_btn_two,
+.navbar-expand-lg.navbar.shrink .get-btn {
+  border-color: #00bade;
+}
+.shrink .navbar-brand h3 {
+  color: #333 !important;
+}
+
+.navbar-expand-lg.navbar {
+  padding: 30px 0px;
+  background-color: #007bff;
+  /* -webkit-transition: all 0.2s linear; */
+  /* -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; */
+}
+.hero-one:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: url(https://droitthemes.com/wp/appart/demo2/wp-content/uploads/sites/2/2018/03/banner-1.png)
+    no-repeat scroll center 100%;
+  background-size: cover;
+  z-index: -1;
+}

@@ -1,5 +1,6 @@
 export default function Panels() {
   return [
+    "https://snowlake-jekyll.netlify.app/assets/js/jquery.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
     "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
     "https://www.jthemes.org/wp/appset/demos/wp-includes/js/jquery/jquery.min.js?ver=3.5.1",
