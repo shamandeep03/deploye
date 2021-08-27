@@ -32,21 +32,21 @@ const Editor = ({ id, Temp }) => {
           </div>
         </div>
       </nav>
-      {/* <div class="panel__top">
-        <div class="panel__basic-actions"></div>
+      {/* <div className="panel__top">
+        <div className="panel__basic-actions"></div>
       </div> */}
-      <div class="editor-row d-flex " style={{ height: "580px" }}>
-        <div class="editor-canvas">
+      <div className="editor-row d-flex " style={{ height: "580px" }}>
+        <div className="editor-canvas">
           <div id="gjs2">{Temp}</div>
         </div>
-        <div class="panel__right">
-          <div class="layers-container" style={{ textAlign: "center" }}>
+        <div className="panel__right">
+          <div className="layers-container" style={{ textAlign: "center" }}>
             Layers Manager
           </div>
-          <div class="styles-container" style={{ textAlign: "center" }}>
+          <div className="styles-container" style={{ textAlign: "center" }}>
             Style Manager
           </div>
-          <div class="traits-container" style={{ textAlign: "center" }}>
+          <div className="traits-container" style={{ textAlign: "center" }}>
             Traits Manager
           </div>
           <div id="blocks" style={{ textAlign: "center" }}>

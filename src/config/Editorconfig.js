@@ -14,16 +14,16 @@ const Editorconfig = () => {
           label: "<b>Section</b>", // You can use HTML/SVG inside labels
           attributes: { class: "gjs-block-section" },
           content: `   
-            <div class="card">
+            <div className="card">
               <img src=
               "https://previews.123rf.com/images/jemastock/jemastock1706/jemastock170608711/80128439-young-and-successful-business-man-cartoon-employee-work.jpg"alt="John" style="width:100%">
               <h1>John Doe</h1>
-              <p class="title">CEO & Founder, Example</p>
+              <p className="title">CEO & Founder, Example</p>
               <p>Harvard University</p>
-              <a href="#"><i class="fa fa-dribbble"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i className="fa fa-dribbble"></i></a>
+              <a href="#"><i className="fa fa-twitter"></i></a>
+              <a href="#"><i className="fa fa-linkedin"></i></a>
+              <a href="#"><i className="fa fa-facebook"></i></a>
               <p><button>Contact</button></p>
             </div>
              <style>

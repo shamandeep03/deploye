@@ -3,7 +3,7 @@ import "../Screens/Editor.css";
 import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
-import Scripdata from "./Script";
+// // import Scripdata from "./Script";
 //import plugin from "grapesjs-component-code-editor";
 //import 'grapesjs/dist/css/grapes.min.css';
 //import "grapesjs-component-code-editor/dist/grapesjs-component-code-editor.min.css";
@@ -11,6 +11,24 @@ import Scripdata from "./Script";
 export default function GrapesjsEditor() {
   return {
     container: "#gjs2",
+    canvas: {
+      scripts: [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
+        "https://condescending-leavitt-bf0c10.netlify.app/jquery.js",
+        "https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.min.js",
+        "https://condescending-leavitt-bf0c10.netlify.app/index.js",
+        "https://condescending-leavitt-bf0c10.netlify.app/steller.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
+      ],
+      styles: [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css",
+
+        // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css",
+        // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+      ],
+    },
     fromElement: true,
     height: "580px",
     width: "100%",
@@ -22,14 +40,6 @@ export default function GrapesjsEditor() {
     },
     selectorManager: {
       appendTo: ".styles-container",
-    },
-    canvas: {
-      canvas: {
-        scripts: Scripdata(),
-        styles: [
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css",
-        ],
-      },
     },
     assetManager: {
       assets: [
@@ -286,7 +296,7 @@ export function CommandJs() {
       var newpage = pageManager.add({
         id: "new-page-id", // without an explicit ID, a random one will be created
         styles: `.my-class { color: red }`, // or a JSON of styles
-        component: '<div class="my-class">My element</div>', // or a JSON of components
+        component: '<div className="my-class">My element</div>', // or a JSON of components
       });
       return newpage;
     },
@@ -318,7 +328,7 @@ export function CommandJs() {
   // const newPage = editor.pageManager.add({
   //   id: "new-page-id", // without an explicit ID, a random one will be created
   //   styles: `.my-class { color: red }`, // or a JSON of styles
-  //   component: '<div class="my-class">My element</div>', // or a JSON of components
+  //   component: '<div className="my-class">My element</div>', // or a JSON of components
   // });
   // const currentPage = pages[currentIndex];
   // currentPage.components = editor.getComponents();
