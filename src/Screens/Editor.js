@@ -14,7 +14,7 @@ const Editor = ({ id, Temp }) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            Grapesjs
+            App Landing
           </a>
           <button
             className="navbar-toggler"

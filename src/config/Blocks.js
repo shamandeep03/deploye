@@ -2745,13 +2745,13 @@ export default function Block() {
             </p>
           </div>
         </div>
-        <div className="row">
+        <div class="row">
           <div
-            className="col flex gap-x-0 justify-center"
+            class="col flex gap-x-0 justify-center"
             eid="6ea7c405-f86f-4c4a-93a1-a5e644dd16ec"
           >
             <button
-              className="s btn-primary rounded-none"
+              class="s btn-primary rounded-none"
               id="monthly-pricing-button"
               eid="9583b49a-ca9e-4140-add5-d565a796b0fc"
             >
@@ -3785,8 +3785,6 @@ export default function Block() {
         border-bottom-right-radius: 9999px;
         border-bottom-left-radius: 9999px;
       }
-
-     
       .rounded-full {
         border-radius: 9999px;
         border-top-left-radius: 9999px;

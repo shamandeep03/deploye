@@ -4,7 +4,7 @@ export const data = [
     id: "1",
     image: "/static/media/1.jng",
   },
-
+ 
   {
     name: "ThirdTemplate",
     id: "3",
