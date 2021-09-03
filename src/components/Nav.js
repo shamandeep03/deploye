@@ -3,7 +3,10 @@ import React from "react";
 const Nav = () => {
   return (
     <div className="row">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light "
+        style={{ backgroundColor: "#f8f9fa" }}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             Navbar

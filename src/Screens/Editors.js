@@ -11,6 +11,7 @@ const Editors = ({ match }) => {
     dispatch(fetchHtml(match.params.id));
   }, [dispatch, match]);
   const { data } = useSelector((state) => state.template);
+
   return (
     <div>
       {data ? (
@@ -18,7 +19,7 @@ const Editors = ({ match }) => {
       ) : (
         <div
           className="spinner-border"
-          style={{ marginLeft: "599px", marginTop: "300px" }}
+          style={{ marginLeft: "599px", marginTop: "300px", color: "white" }}
           role="status"
         >
           <span className="visually-hidden">Loading...</span>

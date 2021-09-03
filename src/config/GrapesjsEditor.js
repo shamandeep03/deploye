@@ -3,31 +3,12 @@ import "../Screens/Editor.css";
 import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
-// // import Scripdata from "./Script";
-//import plugin from "grapesjs-component-code-editor";
-//import 'grapesjs/dist/css/grapes.min.css';
-//import "grapesjs-component-code-editor/dist/grapesjs-component-code-editor.min.css";
-
+import { Script } from "./Script";
 export default function GrapesjsEditor() {
   return {
     container: "#gjs2",
     canvas: {
-      scripts: [
-        "https://code.jquery.com/jquery-3.6.0.min.js",
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
-        "https://condescending-leavitt-bf0c10.netlify.app/jquery.js",
-        "https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.min.js",
-        "https://condescending-leavitt-bf0c10.netlify.app/index.js",
-        "https://condescending-leavitt-bf0c10.netlify.app/steller.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
-      ],
-      styles: [
-        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
-        "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css",
-
-        // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css",
-        // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
-      ],
+      scripts: [...Script],
     },
     fromElement: true,
     height: "580px",
@@ -41,22 +22,7 @@ export default function GrapesjsEditor() {
     selectorManager: {
       appendTo: ".styles-container",
     },
-    assetManager: {
-      assets: [
-        "http://placehold.it/350x250/78c5d6/fff/image1.jpg",
-        {
-          type: "image",
-          src: "http://placehold.it/350x250/459ba8/fff/image2.jpg",
-          height: 350,
-          width: 250,
-        },
-        {
-          src: "http://placehold.it/350x250/79c267/fff/image3.jpg",
-          height: 350,
-          width: 250,
-        },
-      ],
-    },
+
     deviceManager: {
       devices: [
         {
@@ -157,41 +123,10 @@ export default function GrapesjsEditor() {
       appendTo: "#blocks",
       blocks: Blockdata(),
     },
-    domComponents: {
-      tagName: "div",
-      components: [
-        {
-          type: "image",
-          attributes: { src: "https://path/image" },
-        },
-        {
-          tagName: "span",
-          type: "text",
-          attributes: { title: "foo" },
-          components: [
-            {
-              type: "textnode",
-              content: "Hello world!!!",
-            },
-            {
-              type: "my-input-type",
-              attributes: {
-                name: "my-test",
-                title: "hello",
-              },
-            },
-          ],
-        },
-      ],
-    },
   };
 }
 export function CommandJs() {
   var editor = grapesjs.init(GrapesjsEditor());
-  // editor.push(Newcommands);
-  // define this event handler after editor is defined
-  // like in const editor = grapesjs.init({ ...config });
-
   editor.on("component:selected", () => {
     // whenever a component is selected in the editor
 
@@ -238,6 +173,19 @@ export function CommandJs() {
       });
     }
   });
+  editor.on("component:selected", () => {
+    const selected = editor.getSelected();
+    if (!selected || !selected.get("draggable")) return;
+    const el = selected.view.el;
+
+    if (!el._hasCustomEvent) {
+      el._hasCustomEvent = 1;
+      el.addEventListener("mousedown", () => {
+        editor.runCommand("tlb-move");
+      });
+    }
+  });
+
   editor.Commands.add("show-layers", {
     getRowEl(editor) {
       return editor.getContainer().closest(".editor-row");
@@ -266,12 +214,10 @@ export function CommandJs() {
     run(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
       smEl.style.display = "";
-      // document.getElementsByClassName("panel__right").style.display = "display";
     },
     stop(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
       smEl.style.display = "none";
-      //document.getElementsByClassName("panel__right").style.display = "none";
     },
   });
   editor.Commands.add("show-traits", {
@@ -285,24 +231,6 @@ export function CommandJs() {
     stop(editor, sender) {
       this.getTraitsEl(editor).style.display = "none";
     },
-  });
-  editor.Commands.add("show-pages", {
-    getTraitsEl(editor) {
-      const row = editor.getContainer().closest(".editor-row");
-      return row.querySelector(".traits-container");
-    },
-    run(editor, sender) {
-      const pageManager = editor.Pages;
-      var newpage = pageManager.add({
-        id: "new-page-id", // without an explicit ID, a random one will be created
-        styles: `.my-class { color: red }`, // or a JSON of styles
-        component: '<div className="my-class">My element</div>', // or a JSON of components
-      });
-      return newpage;
-    },
-    // stop(editor, sender) {
-    //   this.getTraitsEl(editor).style.display = "none";
-    // },
   });
   editor.Commands.add("show-blocks", {
     getTraitsEl(editor) {
@@ -325,16 +253,4 @@ export function CommandJs() {
   editor.Commands.add("set-device-Tablet", {
     run: (editor) => editor.setDevice("Tablet"),
   });
-  // const newPage = editor.pageManager.add({
-  //   id: "new-page-id", // without an explicit ID, a random one will be created
-  //   styles: `.my-class { color: red }`, // or a JSON of styles
-  //   component: '<div className="my-class">My element</div>', // or a JSON of components
-  // });
-  // const currentPage = pages[currentIndex];
-  // currentPage.components = editor.getComponents();
-  // currentPage.style = editor.getStyle();
-  // const nextPage = pages[nextIndex];
-  // editor.setComponents(nextPage.components);
-  // editor.setStyle(nextPage.style);
-  // editor.plugins.add("grapesjs-custom-code", customCodePlugin);
 }
