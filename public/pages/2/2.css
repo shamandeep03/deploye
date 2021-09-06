@@ -1,6 +1,4 @@
-body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 img.wp-smiley,
 img.emoji {
   display: inline !important;
@@ -4083,7 +4081,7 @@ input.bottom-form-control {
   padding-left: 0;
 }
 body {
-  font-family: Roboto;
+
   font-weight: 300;
   font-style: normal;
   color: #333;

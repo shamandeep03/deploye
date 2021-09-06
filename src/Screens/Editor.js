@@ -1,36 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { CommandJs } from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
-// import { MainJs } from "./Mainscript";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
-
-//import customCodePlugin from "grapesjs-custom-code";
-//import Newcommands from "../config/commands/index.js";
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   const override = css`
     display: block;
     margin: 20% auto;
     border-color: red;
+    position :absolute;
+    height:100vh;
+    width:100vh;
   `;
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    // setLoading(true);
+    // setTimeout(() => {
+    //   setLoading(false);
       CommandJs();
-    }, 8000);
+    // }, 2000);
   }, []);
   return (
     <div className="container-fluid p-0">
-      {loading ? (
-        <RingLoader
-          color={"gray"}
-          loading={loading}
-          css={override}
-          size={150}
-        />
-      ) : (
+      {/* {loading && <RingLoader
+        color={"gray"}
+        loading={loading}
+        css={override}
+        size={150}
+      />} */}
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -97,7 +94,6 @@ const Editor = ({ id, Temp }) => {
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 };

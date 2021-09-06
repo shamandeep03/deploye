@@ -5,9 +5,7 @@ import { templatesReducers } from './Redux/Reducers/TemplateReducers'
 const initialState = {
 }
 const reducers = combineReducers({
-
     template: templatesReducers
-
 })
 const middleware = [thunk]
 const store = createStore(

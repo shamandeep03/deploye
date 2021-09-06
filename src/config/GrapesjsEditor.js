@@ -4,11 +4,17 @@ import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
 import { Script } from "./Script";
-export default function GrapesjsEditor() {
+import store from '../../src/store';
+import { useSelector, useDispatch } from "react-redux";
+
+ const  GrapesjsEditor=()=> {
+   //const { data,cdns } = useSelector(state => state.template);
+   var data = store.getState().template.cdns[0].links;
+     console.log(data,'-----------------')
   return {
     container: "#gjs2",
     canvas: {
-      scripts: [...Script],
+      scripts: data,
     },
     fromElement: true,
     height: "580px",
@@ -22,7 +28,6 @@ export default function GrapesjsEditor() {
     selectorManager: {
       appendTo: ".styles-container",
     },
-
     deviceManager: {
       devices: [
         {

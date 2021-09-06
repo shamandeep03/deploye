@@ -1,10 +1,12 @@
 import axios from "axios";
-export const fetchHtml = (id) => async (dispatch) => {
+import { data } from "../../data/templatesData";
+export const fetchHtml = (id, links) => async (dispatch) => {
   try {
     dispatch({ type: "GET_PAGE" });
     let url = `/pages/${id}/${id}.html`;
     let cssurl = `/pages/${id}/${id}.css`;
     let method = "GET";
+    let cdns = data.filter((i) => i.id === id);
     const css = await axios.get(cssurl, { responseType: "text" });
     await axios
       .request({
@@ -19,10 +21,9 @@ export const fetchHtml = (id) => async (dispatch) => {
         const style = document.createElement("style");
         style.innerHTML = css.data;
         head.appendChild(style);
-        //head.appendChild(script);
         dispatch({
           type: "GET_PAGE_SUCCESS",
-          payload: doc.documentElement.innerHTML,
+          payload: { data: doc.documentElement.innerHTML, cdns: cdns },
         });
       });
   } catch (error) {
