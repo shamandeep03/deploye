@@ -3,18 +3,19 @@ import "../Screens/Editor.css";
 import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
-import { Script } from "./Script";
 import store from '../../src/store';
-import { useSelector, useDispatch } from "react-redux";
 
  const  GrapesjsEditor=()=> {
-   //const { data,cdns } = useSelector(state => state.template);
    var data = store.getState().template.cdns[0].links;
-     console.log(data,'-----------------')
   return {
     container: "#gjs2",
     canvas: {
       scripts: data,
+      style: [
+        // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
+      ]
     },
     fromElement: true,
     height: "580px",
@@ -53,6 +54,13 @@ import { useSelector, useDispatch } from "react-redux";
     traitManager: {
       appendTo: ".traits-container",
     },
+    // pageManager: {
+    //     current: 1,
+    //     pages: [
+    //       { components: [], style: [] },
+    //       { components: [], style: [] },
+    //     ]
+    // },
     styleManager: {
       appendTo: ".styles-container",
       sectors: [
@@ -132,6 +140,17 @@ import { useSelector, useDispatch } from "react-redux";
 }
 export function CommandJs() {
   var editor = grapesjs.init(GrapesjsEditor());
+//   const pageManager = editor.Pages;
+//   const currentPage = pages[currentIndex];
+// currentPage.components = editor.getComponents();
+// currentPage.style = editor.getStyle();
+
+// and then you change the editor with the next one
+
+// const nextPage = pages[nextIndex];
+// editor.setComponents(nextPage.components);
+// editor.setStyle(nextPage.style);
+
   editor.on("component:selected", () => {
     // whenever a component is selected in the editor
 

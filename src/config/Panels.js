@@ -70,6 +70,12 @@ export default function Panels() {
           command: (e) => e.runCommand("core:redo"),
           attributes: { title: "Redo" },
         },
+        // {
+        //   id: "code ",
+        //   className: "fa fa-repeat btn btn-light panel__tops prewiew nav-item",
+        //   command: (e) => e.runCommand("custom-code:open-modal"),
+        //   attributes: { title: "Redo" },
+        // },
         {
           id: "show-style",
           active: true,

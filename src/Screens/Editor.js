@@ -6,19 +6,20 @@ import RingLoader from "react-spinners/RingLoader";
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   const override = css`
-    display: block;
-    margin: 20% auto;
     border-color: red;
     position :absolute;
+  
     height:100vh;
-    width:100vh;
+    width:100%;
+    background-color: white;
+    z-index:99999;
   `;
   useEffect(() => {
-    // setLoading(true);
-    // setTimeout(() => {
-    //   setLoading(false);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
       CommandJs();
-    // }, 2000);
+    }, 1000);
   }, []);
   return (
     <div className="container-fluid p-0">

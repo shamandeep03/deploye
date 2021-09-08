@@ -10,8 +10,8 @@ export const data = [
       "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
       "https://app-landing-theme-01.netlify.app/jquery.js",
-      "https://app-landing-theme-01.netlify.app/stellar.js",
       "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
+      "https://app-landing-theme-01.netlify.app/stellar.js",
   ]
   },
 
@@ -20,11 +20,14 @@ export const data = [
     id: "2",
     image: "../images/3.jpg",
     links: [
-      "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
-      "https://app-landing-theme-07.netlify.app/theme.js",
-      "https://app-landing-theme-07.netlify.app/index.js",
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
-      "https://app-landing-theme-07.netlify.app/script.js"
+      "https://app-landing-theme-02.netlify.app/jquery.js",
+     
+      "https://app-landing-theme-02.netlify.app/index.js",
+      
+      "https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.min.js",
+     
+      "https://app-landing-theme-02.netlify.app/steller.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
     ]
   },
   {
@@ -100,6 +103,14 @@ export const data = [
       "https://app-landing-theme-07.netlify.app/index.js",
       "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
       "https://app-landing-theme-07.netlify.app/script.js"
+    ]
+  },
+  {
+    name: "EightTemplate",
+    id: "9",
+    image: "../images/5.jpg",
+    links: [
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
     ]
   },
 ];
