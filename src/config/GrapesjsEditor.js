@@ -5,8 +5,8 @@ import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
 import store from '../../src/store';
 
- const  GrapesjsEditor=()=> {
-   var data = store.getState().template.cdns[0].links;
+const GrapesjsEditor = () => {
+  var data = store.getState().template.cdns[0].links;
   return {
     container: "#gjs2",
     canvas: {
@@ -17,7 +17,38 @@ import store from '../../src/store';
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
       ]
     },
-    fromElement: true,
+    assetManager: {
+      assets: [
+        'https://app-landing-theme-02.netlify.app/images/image-06.png',
+        // Pass an object with your properties
+       
+        {
+          type: 'image',
+          src: 'https://app-landing-theme-02.netlify.app/images/image-01.png',
+          height: 350,
+          width: 250,
+          name: 'displayName'
+        },
+        {
+          // As the 'image' is the base type of assets, omitting it will
+          // be set as `image` by default
+          src: 'https://app-landing-theme-02.netlify.app/images/image-07.png',
+          height: 350,
+          width: 250,
+          name: 'displayName'
+        },
+      ],
+      uploadText: 'Drop files here',
+      headers: {},
+      params: {},
+      autoAdd: 1,
+      addBtnText: 'ssss image',
+      dropzone: 0,
+      openAssetsOnDrop: 0,
+      dropzoneContent: '<div class="dropzone-inner">Drop media here.</div>',
+      modalTitle: 'Select Image',
+    },
+    fromElement: 1,
     height: "580px",
     width: "100%",
     cssIcons:
@@ -60,6 +91,16 @@ import store from '../../src/store';
     //       { components: [], style: [] },
     //       { components: [], style: [] },
     //     ]
+    // },
+    // pageManager: {
+    //     "page": 1,
+    //     "limit": 10,
+    //     "total": 2,
+    //     "books": [
+    //       {"id": 1, "title": "Pride and Prejudice"},
+    //       {"id": 4, "title": "The Great Gatsby"}
+    //     ]
+      
     // },
     styleManager: {
       appendTo: ".styles-container",
@@ -137,19 +178,12 @@ import store from '../../src/store';
       blocks: Blockdata(),
     },
   };
-}
+};
+
 export function CommandJs() {
   var editor = grapesjs.init(GrapesjsEditor());
-//   const pageManager = editor.Pages;
-//   const currentPage = pages[currentIndex];
-// currentPage.components = editor.getComponents();
-// currentPage.style = editor.getStyle();
-
-// and then you change the editor with the next one
-
-// const nextPage = pages[nextIndex];
-// editor.setComponents(nextPage.components);
-// editor.setStyle(nextPage.style);
+  const pageManager = editor.Pages;
+  pageManager.get('1');
 
   editor.on("component:selected", () => {
     // whenever a component is selected in the editor
@@ -157,7 +191,8 @@ export function CommandJs() {
     // set your command and icon here
     const commandToAdd = "tlb-settime";
     const commandIcon = "fa fa-arrow-right";
-
+   // = document.getElementById("mycontent").style.display = "none";
+    //const styleCommand =document.getElementById("mycontent").style.backgroundColor = "lightblue";
     // get the selected componnet and its default toolbar
     const selectedComponent = editor.getSelected();
     const defaultToolbar = selectedComponent.get("toolbar");
@@ -166,7 +201,7 @@ export function CommandJs() {
     const commandExists = defaultToolbar.some(
       (item) => item.command === commandToAdd
     );
-
+   
     // if it doesn't already exist, add it
     if (!commandExists) {
       selectedComponent.set({
@@ -178,7 +213,7 @@ export function CommandJs() {
           },
           {
             attributes: { class: "fas fa-paste", title: "paste" },
-            command: (ed) => ed.runCommand("core:paste", { force: 1 }),
+            command: (ed) => ed.runCommand(document.body.style.color = "red", { force: 1 }),
           },
           {
             attributes: { class: commandIcon, title: "next" },

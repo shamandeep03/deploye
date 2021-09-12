@@ -18,7 +18,7 @@ const Editors = ({ match }) => {
       ) : (
         <div
           className="spinner-border"
-          style={{ marginLeft: "599px", marginTop: "300px" }}
+          style={{ marginLeft: "599px", marginTop: "300px" ,color:"white"}}
           role="status"
         >
           <span className="visually-hidden">Loading...</span>

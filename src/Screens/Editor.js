@@ -3,6 +3,7 @@ import { CommandJs } from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
+import $ from 'jquery';
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   const override = css`
@@ -19,16 +20,17 @@ const Editor = ({ id, Temp }) => {
     setTimeout(() => {
       setLoading(false);
       CommandJs();
-    }, 1000);
+    }, 2000);
   }, []);
+
   return (
     <div className="container-fluid p-0">
-      {/* {loading && <RingLoader
+      {loading && <RingLoader
         color={"gray"}
         loading={loading}
         css={override}
         size={150}
-      />} */}
+      />}
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">

@@ -14,18 +14,14 @@ export const data = [
       "https://app-landing-theme-01.netlify.app/stellar.js",
   ]
   },
-
   {
     name: "SecondTemplate",
     id: "2",
     image: "../images/3.jpg",
     links: [
       "https://app-landing-theme-02.netlify.app/jquery.js",
-     
       "https://app-landing-theme-02.netlify.app/index.js",
-      
       "https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.min.js",
-     
       "https://app-landing-theme-02.netlify.app/steller.js",
       "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
     ]
