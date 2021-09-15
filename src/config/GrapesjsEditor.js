@@ -7,12 +7,12 @@ import store from '../../src/store';
 
 const GrapesjsEditor = () => {
   var data = store.getState().template.cdns[0].links;
+  var Pages = store.getState().template.cdns[0].pages;
   return {
     container: "#gjs2",
     canvas: {
       scripts: data,
       style: [
-        // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
         "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
       ]
@@ -85,23 +85,9 @@ const GrapesjsEditor = () => {
     traitManager: {
       appendTo: ".traits-container",
     },
-    // pageManager: {
-    //     current: 1,
-    //     pages: [
-    //       { components: [], style: [] },
-    //       { components: [], style: [] },
-    //     ]
-    // },
-    // pageManager: {
-    //     "page": 1,
-    //     "limit": 10,
-    //     "total": 2,
-    //     "books": [
-    //       {"id": 1, "title": "Pride and Prejudice"},
-    //       {"id": 4, "title": "The Great Gatsby"}
-    //     ]
-      
-    // },
+    pageManager: {
+      pages: Pages
+    },
     styleManager: {
       appendTo: ".styles-container",
       sectors: [
@@ -173,35 +159,30 @@ const GrapesjsEditor = () => {
         },
       ],
     },
-    blockManager: {
+      blockManager: {
       appendTo: "#blocks",
       blocks: Blockdata(),
     },
   };
 };
 
-export function CommandJs() {
+export function CommandJs(dispatch) {
+  var Pages = store.getState().template.cdns[0].pages;
   var editor = grapesjs.init(GrapesjsEditor());
-  const pageManager = editor.Pages;
-  pageManager.get('1');
-
+  // const mapStateToProps=(state)=>({ editor })
+  // var data  = store.getState();
+  // console.log(data,'dadadadadadda')
+   const pageManager = editor.Pages;
+  pageManager.get('first_1');
+  console.log( Pages,'shamana')
   editor.on("component:selected", () => {
-    // whenever a component is selected in the editor
-
-    // set your command and icon here
     const commandToAdd = "tlb-settime";
     const commandIcon = "fa fa-arrow-right";
-   // = document.getElementById("mycontent").style.display = "none";
-    //const styleCommand =document.getElementById("mycontent").style.backgroundColor = "lightblue";
-    // get the selected componnet and its default toolbar
     const selectedComponent = editor.getSelected();
     const defaultToolbar = selectedComponent.get("toolbar");
-
-    // check if this command already exists on this component toolbar
     const commandExists = defaultToolbar.some(
       (item) => item.command === commandToAdd
     );
-   
     // if it doesn't already exist, add it
     if (!commandExists) {
       selectedComponent.set({
@@ -236,7 +217,6 @@ export function CommandJs() {
     const selected = editor.getSelected();
     if (!selected || !selected.get("draggable")) return;
     const el = selected.view.el;
-
     if (!el._hasCustomEvent) {
       el._hasCustomEvent = 1;
       el.addEventListener("mousedown", () => {
@@ -256,6 +236,8 @@ export function CommandJs() {
     run(editor, sender) {
       const lmEl = this.getLayersEl(this.getRowEl(editor));
       lmEl.style.display = "";
+      document.querySelector(".pages-container").style.display="none";
+      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       const lmEl = this.getLayersEl(this.getRowEl(editor));
@@ -273,6 +255,8 @@ export function CommandJs() {
     run(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
       smEl.style.display = "";
+      document.querySelector(".pages-container").style.display="none";
+      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
@@ -286,6 +270,8 @@ export function CommandJs() {
     },
     run(editor, sender) {
       this.getTraitsEl(editor).style.display = "";
+      document.querySelector(".pages-container").style.display="none";
+      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       this.getTraitsEl(editor).style.display = "none";
@@ -298,6 +284,8 @@ export function CommandJs() {
     },
     run(editor, sender) {
       this.getTraitsEl(editor).style.display = "";
+      document.querySelector(".pages-container").style.display="none";
+      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       this.getTraitsEl(editor).style.display = "none";

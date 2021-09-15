@@ -1,4 +1,7 @@
+import store from '../../src/store';
 export default function Panels() {
+  var Pages = store.getState().template.cdns[0].pages;
+  console.log(Pages,'----------')
   return [
     {
       id: "basic-actions",
@@ -23,19 +26,22 @@ export default function Panels() {
           togglable: true,
         },
         {
-          id: "submit",
-          className: "btn btn-primary panel__tops nav-item",
-          label: "save",
-          command: "save-changes",
-          togglable: true,
+          id: "appPages",
+          className: "btn btn-light panel__tops prewiew nav-item",
+          label: "pages",
+          command(editor) { 
+            document.querySelector(".pages-container").style.display="flex";
+            document.querySelector(".page_add").style.display="block";
+          },
+            attributes: { title: "App New Page"},
         },
-        {
-          id: "publish",
-          className: "btn btn-publish panel__tops nav-item",
-          label: "publish",
-          command: "publish-changes",
-          togglable: true,
-        },
+        // {
+        //   id: "publish",
+        //   className: "btn btn-publish panel__tops nav-item",
+        //   label: "publish",
+        //   command: "publish-changes",
+        //   togglable: true,
+        // },
         {
           id: "device-desktop",
           className: "fa fa-desktop prewiew panel__tops btn btn-light nav-item",
@@ -70,12 +76,6 @@ export default function Panels() {
           command: (e) => e.runCommand("core:redo"),
           attributes: { title: "Redo" },
         },
-        // {
-        //   id: "code ",
-        //   className: "fa fa-repeat btn btn-light panel__tops prewiew nav-item",
-        //   command: (e) => e.runCommand("custom-code:open-modal"),
-        //   attributes: { title: "Redo" },
-        // },
         {
           id: "show-style",
           active: true,
@@ -110,24 +110,28 @@ export default function Panels() {
           attributes: { title: "Open Block Manager" },
           togglable: false,
         },
+        {
+          label:"add pages",
+          className: "btn btn-light panel__tops prewiew nav-item page_add",
+          command(editor) { 
+          const pageManager = editor.Pages;
+          const len = pageManager.getAll().length;
+            pageManager.add({
+              name:`new-page ${len + 1}`,
+              id: `new-page-id ${len + 1}`, // without an explicit ID, a random one will be created
+              styles: `.my-class { color: red }`, // or a JSON of styles
+              component: `<div class="my-class">My element ${len + 1}</div>`, // or a JSON of components
+            });
+            const somePage = pageManager.get(`new-page-id ${len + 1}`);
+            pageManager.select(somePage);
+            Pages.push( pageManager.select(somePage))
+            console.log( Pages.push( pageManager.select(somePage)),'===============')
+           },
+          attributes: { title: "App New Page"},
+        }
       ],
     },
-    // {
-    //   id: "device",
-    //   el: ".panel_device",
-    //   buttons: [
-
-    //   ],
-    // },
-    // {
-    //   id: "device",
-    //   el: ".style_panel",
-    //   buttons: [
-
-    //   ],
-    // },
     {
-      //id: "basic-actions",
       el: ".left__top",
       buttons: [
         {
@@ -145,7 +149,7 @@ export default function Panels() {
           command: (e) => e.runCommand("core:fullscreen"),
           attributes: { title: "full screen" },
         },
-        {
+        { 
           id: "export",
           className:
             "fa fa-code btn btn-light panel__tops prewiew nav-item left",
@@ -171,19 +175,5 @@ export default function Panels() {
         },
       ],
     },
-    // {
-    //   id: "layers",
-    //   el: ".panel__right",
-    //   // Make the panel resizable
-    //   resizable: {
-    //     maxDim: 350,
-    //     minDim: 200,
-    //     tc: 0, // Top handler
-    //     cl: 1, // Left handler
-    //     cr: 0, // Right handler
-    //     bc: 0, // Bottom handler
-    //     keyWidth: "flex-basis",
-    //   },
-    // },
   ];
 }

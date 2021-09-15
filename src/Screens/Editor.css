@@ -66,7 +66,6 @@
   flex-wrap: nowrap;
   height: 300px;
 }
-
 .editor-canvas {
   flex-grow: 1;
 }
@@ -75,7 +74,6 @@
   flex-basis: 230px;
   position: relative;
   overflow-y: auto;
-  /* background-color: rgb(231, 223, 223); */
 }
 
 .gjs-block {
@@ -95,25 +93,12 @@
   width: inherit;
   /* background-color: #f1f1f1; */
 }
-/* .editor-canvas {
-  flex-grow: 1;
-} */
-/* .gjs-color-warn {
-  /* color: #ffca6f; 
-  fill: black;
-} */
-/* .panel__right {
-  flex-basis: 230px;
-  position: relative;
-  overflow-y: auto;
-  z-index: 0;
+span.gjs-pn-btn.fa.fa-desktop.prewiew.panel__tops.btn.btn-light.nav-item {
+  margin-left: 200px;
 }
-.panel__switcher {
-  position: initial;
+span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
+  margin-left: 434px;
 }
-.panel__devices {
-  position: initial;
-}*/
 #left_button_panel .gjs-pn-buttons {
   display: flex;
   flex-direction: column !important;
@@ -127,21 +112,44 @@
 .panel_device {
   position: initial;
 }
+.gjs-one-bg{
+  background-color: transparent;
+}
 .preview_panel.gjs-pn-panel.gjs-pn-basic-actions.gjs-one-bg.gjs-two-color {
   margin-top: -18px;
+}
+.btn-light {
+  color: gray;
+  background-color: transparent;
+  border: 3px solid gray;
+}
+.page_buton{
+  margin: 5px !important;
 }
 .gjs-pn-buttons .left {
   margin-bottom: 6px;
 }
+.gjs-pn-btn{
+ padding-top : -40px !important;
+}
 .gjs-pn-btn {
   background-color: #1a1a1a;
   color: gray !important;
+  border: 3px solid gray;
 }
 .gjs-pn-btn #left_button_panel {
-  margin-bottom: 6px !important;
+  margin-bottom: -14px !important;
 }
 .bg-light {
   background-color: #212529 !important;
+}
+.pages-container{
+  flex-direction: column;
+  margin: 2px;
+}
+span.gjs-pn-btn.btn.btn-light.panel__tops.prewiew.nav-item.page_add {
+  margin-left: 132px;
+  width: 204px;
 }
 @media only screen and (min-width: 768px) {
   .gjs-pn-buttons {
@@ -149,12 +157,14 @@
     display: flex;
     justify-content: space-between;
   }
+  .gjs-pn-buttons #panela_button{
+    display: flex !important;
+    flex-direction: column !important;
+    float: left !important;
+    text-align: center !important;
+  }
 }
 @media only screen and (max-width: 600px) {
-  /* .collapsible {
-    display: block;
-    /* width: inherit; 
-  } */
   .prewiew {
     width: 87px;
     margin: 5px;
@@ -170,35 +180,7 @@
  .left__top{
    display: none;
  }
-  /* Style the button that is used to open and close the collapsible content */
-  .collapsible {
-    /* background-color: #eee; */
-    color: #444;
-    cursor: pointer;
-    display: block !important;
-    padding: 18px;
-    width: 100%;
-    height: 50px;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
 
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active,
-  .collapsible:hover {
-    /* background-color: #ccc; */
-  }
-
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    width: in;
-    /* background-color: #f1f1f1; */
-  }
 }
 .navbar-collapse {
   flex-basis: 100%;
@@ -207,5 +189,3 @@
   /* // z-index: 9; */
 }
 
-/* }
-@media only screen and (min-width: 375px) { */

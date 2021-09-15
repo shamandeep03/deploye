@@ -28,5 +28,5 @@ export const fetchHtml = (id, links) => async (dispatch) => {
       });
   } catch (error) {
     console.log(error);
-  }
+  } 
 };
