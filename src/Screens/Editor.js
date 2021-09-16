@@ -21,12 +21,7 @@ const Editor = ({ id, Temp }) => {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("page_div").style.marginLeft= "0";
   }
-  if ($(window).width() < 960) {
-    alert('Less than 720');
- }
- else {
-    alert('More than 960');
- }
+
   useEffect(() => {
     setLoading(true);
     CommandJs();

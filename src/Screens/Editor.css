@@ -210,7 +210,6 @@ span.gjs-pn-btn.btn.btn-light.panel__tops.prewiew.nav-item.page_add {
   .gjs-pn-buttons {
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
   }
   .gjs-pn-buttons #panela_button{
