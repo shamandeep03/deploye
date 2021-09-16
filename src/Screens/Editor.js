@@ -3,7 +3,6 @@ import {CommandJs}  from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
-import $ from "jquery";
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   const override = css`
@@ -21,7 +20,6 @@ const Editor = ({ id, Temp }) => {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("page_div").style.marginLeft= "0";
   }
-
   useEffect(() => {
     setLoading(true);
     CommandJs();
