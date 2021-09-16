@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { CommandJs } from "../config/GrapesjsEditor";
+import {CommandJs}  from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
-import store from '../../src/store';
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   const override = css`
@@ -11,27 +10,20 @@ const Editor = ({ id, Temp }) => {
     position :absolute;
     height:100vh;
     width:100%;
+    padding-top:20%;
+    padding-left:20%;
+    justify-content: center !important;
     background-color: white;
     z-index:99999;
-  `;
+  `; 
+
   useEffect(() => {
     setLoading(true);
+    CommandJs();
     setTimeout(() => {
       setLoading(false);
-      CommandJs();
-    }, 1000);
+    }, 4000);
   }, []);
- function selectPage(pages){
-   console.log(pages,'select')
- }
- function  isSelected(pageId) {
- console.log(pageId)
- }
- function removePage(pageId) {
-  console.log(pageId,'removePage')
-}
-  var Pages = store.getState().template.cdns[0].pages;
-  console.log(Pages,'----------')
   return (
     <div className="container-fluid p-0">
       {loading && <RingLoader
@@ -92,13 +84,14 @@ const Editor = ({ id, Temp }) => {
               <div id="gjs2">{Temp}</div>
             </div>
             <div className="panel__right">   
-              <div className="pages-container" style={{ textAlign: "center", display:"none"}}>
+              <div id="mu_button" className="pages-container" style={{ textAlign: "center"}}>
                pages
-               {Pages.map((num,inedx)=> 
+               {/* {Pages.map((num,inedx)=> 
                 <div type="submit" key={num.id} className="btn btn-light panel__tops prewiew nav-item page_buton" onClick={() =>selectPage(num.id)}>
-                page&nbsp;&nbsp;{inedx +1}<span  onClick={removePage(num.id)} className="page-close">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</span></div>
-               )}
+                &nbsp;&nbsp;{num.id}</div>
+               )} */}
+               {/* <span  v-if={!isSelected(num)} type="submit" onClick={() =>removePage(num.id)} className="page-close">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</span> */}
               </div>        
               <div className="layers-container" style={{ textAlign: "center" }}>
                 Layers Manager

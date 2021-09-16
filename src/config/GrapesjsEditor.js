@@ -5,7 +5,7 @@ import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
 import store from '../../src/store';
 
-const GrapesjsEditor = () => {
+export function  GrapesjsEditor(){
   var data = store.getState().template.cdns[0].links;
   var Pages = store.getState().template.cdns[0].pages;
   return {
@@ -49,7 +49,7 @@ const GrapesjsEditor = () => {
       modalTitle: 'Select Image',
     },
     fromElement: 1,
-    height: "580px",
+    height: "600px",
     width: "100%",
     cssIcons:
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
@@ -167,14 +167,24 @@ const GrapesjsEditor = () => {
 };
 
 export function CommandJs(dispatch) {
-  var Pages = store.getState().template.cdns[0].pages;
+  var setPage = store.getState().template.cdns[0].pages;
   var editor = grapesjs.init(GrapesjsEditor());
-  // const mapStateToProps=(state)=>({ editor })
-  // var data  = store.getState();
-  // console.log(data,'dadadadadadda')
-   const pageManager = editor.Pages;
-  pageManager.get('first_1');
-  console.log( Pages,'shamana')
+  for( var i = 0; i < setPage.length; i++) {
+    var button = document.createElement("div");
+    button.innerHTML=setPage[i].name;
+    button.setAttribute("class", "btn btn-light panel__tops prewiew nav-item page_buton");
+    button.setAttribute("type", "submit");
+    button.setAttribute("id",setPage[i].id );
+    var buttonDiv = document.getElementById("mu_button");
+    buttonDiv.appendChild(button);
+  }
+  for( var j = 0; j < setPage.length; j++) {
+    var page_button =  document.getElementById(setPage[j].id);
+    page_button.addEventListener("click", function(pageId){
+      editor.Pages.select(pageId.target.id)
+    });
+  }
+ 
   editor.on("component:selected", () => {
     const commandToAdd = "tlb-settime";
     const commandIcon = "fa fa-arrow-right";
@@ -237,7 +247,6 @@ export function CommandJs(dispatch) {
       const lmEl = this.getLayersEl(this.getRowEl(editor));
       lmEl.style.display = "";
       document.querySelector(".pages-container").style.display="none";
-      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       const lmEl = this.getLayersEl(this.getRowEl(editor));
@@ -256,7 +265,6 @@ export function CommandJs(dispatch) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
       smEl.style.display = "";
       document.querySelector(".pages-container").style.display="none";
-      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       const smEl = this.getStyleEl(this.getRowEl(editor));
@@ -271,7 +279,6 @@ export function CommandJs(dispatch) {
     run(editor, sender) {
       this.getTraitsEl(editor).style.display = "";
       document.querySelector(".pages-container").style.display="none";
-      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       this.getTraitsEl(editor).style.display = "none";
@@ -285,7 +292,6 @@ export function CommandJs(dispatch) {
     run(editor, sender) {
       this.getTraitsEl(editor).style.display = "";
       document.querySelector(".pages-container").style.display="none";
-      document.querySelector(".page_add").style.display="none";
     },
     stop(editor, sender) {
       this.getTraitsEl(editor).style.display = "none";
