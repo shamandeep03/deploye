@@ -436,7 +436,14 @@ href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3
 
 </body>
 </html> `,
-styles:`#loading {
+styles:`
+ #ixozs {
+  color: white !important;
+}
+.navbar-bar-icon {
+  color: white !important;
+}
+#loading {
   position: fixed;
   display: block;
   width: 100%;

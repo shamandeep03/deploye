@@ -49,7 +49,7 @@ export function  GrapesjsEditor(){
       modalTitle: 'Select Image',
     },
     fromElement: 1,
-    height: "600px",
+    height: "648px",
     width: "100%",
     cssIcons:
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
@@ -175,7 +175,7 @@ export function CommandJs(dispatch) {
     button.setAttribute("class", "btn btn-light panel__tops prewiew nav-item page_buton");
     button.setAttribute("type", "submit");
     button.setAttribute("id",setPage[i].id );
-    var buttonDiv = document.getElementById("mu_button");
+    var buttonDiv = document.getElementById("mySidebar");
     buttonDiv.appendChild(button);
   }
   for( var j = 0; j < setPage.length; j++) {
@@ -278,6 +278,7 @@ export function CommandJs(dispatch) {
     },
     run(editor, sender) {
       this.getTraitsEl(editor).style.display = "";
+      document.querySelector(".styles-container").style.display = "none"
       document.querySelector(".pages-container").style.display="none";
     },
     stop(editor, sender) {
@@ -291,6 +292,7 @@ export function CommandJs(dispatch) {
     },
     run(editor, sender) {
       this.getTraitsEl(editor).style.display = "";
+      document.querySelector(".styles-container").style.display = "none"
       document.querySelector(".pages-container").style.display="none";
     },
     stop(editor, sender) {
@@ -298,12 +300,17 @@ export function CommandJs(dispatch) {
     },
   });
   editor.Commands.add("set-device-desktop", {
-    run: (editor) => editor.setDevice("Desktop"),
+    run: (editor) => {editor.setDevice("Desktop")
+    document.querySelector(".styles-container").style.display = ""
+  },
   });
   editor.Commands.add("set-device-mobile", {
-    run: (editor) => editor.setDevice("Mobile"),
+    run: (editor) => {editor.setDevice("Mobile")
+    document.querySelector(".styles-container").style.display = ""
+  },
   });
   editor.Commands.add("set-device-Tablet", {
-    run: (editor) => editor.setDevice("Tablet"),
+    run: (editor) => {editor.setDevice("Tablet")
+    document.querySelector(".styles-container").style.display = ""},
   });
 }

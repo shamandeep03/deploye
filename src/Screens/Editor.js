@@ -3,6 +3,7 @@ import {CommandJs}  from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
+import $ from "jquery";
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   const override = css`
@@ -16,7 +17,16 @@ const Editor = ({ id, Temp }) => {
     background-color: white;
     z-index:99999;
   `; 
-
+  const closeNav=()=>{
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("page_div").style.marginLeft= "0";
+  }
+  if ($(window).width() < 960) {
+    alert('Less than 720');
+ }
+ else {
+    alert('More than 960');
+ }
   useEffect(() => {
     setLoading(true);
     CommandJs();
@@ -54,7 +64,7 @@ const Editor = ({ id, Temp }) => {
                   <div
                     id="panela_button"
                     className="preview_panel"
-                    style={{ marginTop: "-19px" }}
+                    style={{ marginTop: "-19px",backgroundColor: "transparent" }}
                   ></div>
                   <div className="panel_device"></div>
                   <div className="style_panel"></div>
@@ -66,7 +76,7 @@ const Editor = ({ id, Temp }) => {
           <div
             className="editor-row d-flex "
             style={{
-              height: "580px",
+              height: "648px",
               backgroundColor: "#212529",
               color: "white",
             }}
@@ -76,23 +86,22 @@ const Editor = ({ id, Temp }) => {
               id="left_button_panel"
               style={{
                 flexBasis: "45px",
-                height: "92vh",
+                height: "90vh",
                 position: "inherit",
+                backgroundColor: "transparent"
               }}
-            ></div>
+            >
+            </div>
+            <div id="page_div" className="pages-container">
+              <div id="mySidebar" className="sidebar">
+                <h3>Pages</h3>
+              <span className="closebtn" onClick={closeNav}>×</span>
+              </div>
+              </div>
             <div className="editor-canvas">
               <div id="gjs2">{Temp}</div>
             </div>
-            <div className="panel__right">   
-              <div id="mu_button" className="pages-container" style={{ textAlign: "center"}}>
-               pages
-               {/* {Pages.map((num,inedx)=> 
-                <div type="submit" key={num.id} className="btn btn-light panel__tops prewiew nav-item page_buton" onClick={() =>selectPage(num.id)}>
-                &nbsp;&nbsp;{num.id}</div>
-               )} */}
-               {/* <span  v-if={!isSelected(num)} type="submit" onClick={() =>removePage(num.id)} className="page-close">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</span> */}
-              </div>        
+            <div className="panel__right">           
               <div className="layers-container" style={{ textAlign: "center" }}>
                 Layers Manager
               </div>

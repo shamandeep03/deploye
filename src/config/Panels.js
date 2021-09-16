@@ -14,6 +14,17 @@ export default function Panels() {
           togglable: false,
         },
         {
+          id: "appPages",
+          className: "openbtn btn btn-light panel__tops prewiew nav-item",
+          label: "home pages",
+          command(editor) {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.querySelector(".pages-container").style.display="flex";
+            document.querySelector(".styles-container").style.display = ""
+            },
+            attributes: { title: "App New Page"},
+        },
+        {
           id: "preview-button",
           className: "fa fa-eye privew panel__tops btn btn-light nav-item",
           command: "sw-visibility",
@@ -22,15 +33,7 @@ export default function Panels() {
           attributes: { title: "View" },
           togglable: true,
         },
-        {
-          id: "appPages",
-          className: "btn btn-light panel__tops prewiew nav-item",
-          label: "pages",
-          command(editor) {
-            document.querySelector(".pages-container").style.display="flex";
-            },
-            attributes: { title: "App New Page"},
-        },
+        
         {
           id: "device-desktop",
           className: "fa fa-desktop prewiew panel__tops btn btn-light nav-item",
