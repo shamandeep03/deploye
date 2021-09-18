@@ -22,15 +22,14 @@ export default function Panels() {
             document.querySelector(".pages-container").style.display="flex";
             document.querySelector(".styles-container").style.display = ""
             },
-            attributes: { title: "App New Page"},
+            attributes: { title: "App New Page",style:"marginLeft:30px"},
         },
         {
           id: "preview-button",
           className: "fa fa-eye privew panel__tops btn btn-light nav-item",
           command: "sw-visibility",
-          label: "Privew",
           active: false,
-          attributes: { title: "View" },
+          attributes: { title: "View" ,style: "display:none" },
           togglable: true,
         },
         
@@ -101,7 +100,7 @@ export default function Panels() {
           command: "show-blocks",
           attributes: { title: "Open Block Manager" },
           togglable: false,
-        },
+        }
       ],
     },
     {
@@ -119,18 +118,12 @@ export default function Panels() {
           id: "full screen",
           className:
             "fa fa-arrows-alt btn btn-light panel__tops prewiew nav-item left",
-          command: (e) => e.runCommand("core:fullscreen"),
+          command(editor){
+            editor.runCommand('fullscreen', {  target: '#something' })
+          },
           attributes: { title: "full screen" },
         },
-        { 
-          id: "export",
-          className:
-            "fa fa-code btn btn-light panel__tops prewiew nav-item left",
-          attributes: { title: "Code View" },
-          command: "export-template",
-          context: "export-template", // For grouping context of buttons from the same panel
-        },
-        {
+         {
           id: "show-json",
           className:
             "btn-show-json left  btn btn-light panel__tops prewiew nav-item",

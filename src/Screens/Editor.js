@@ -3,8 +3,11 @@ import {CommandJs}  from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
+import store from '../../src/store';
+
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
+  var preview = store.getState().template.cdns[0].preview;
   const override = css`
     border-color: red;
     position :absolute;
@@ -20,6 +23,21 @@ const Editor = ({ id, Temp }) => {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("page_div").style.marginLeft= "0";
   }
+  const closecontainer=()=>{
+    document.getElementById("panel__right").style.width = "0";
+    document.getElementById("right_div").style.width= "0";
+    document.getElementById("right_div").style.marginLeft= "0";
+    document.getElementById("closecontianer").style.display= "none";
+    document.getElementById("opencontianer").style.display= "block";
+  }
+  
+  const opencontainer=()=>{
+    document.getElementById("right_div").style.width = "290px";
+    document.querySelector("#right_div").style.display="flex";
+    document.getElementById("closecontianer").style.display= "block";
+    document.getElementById("opencontianer").style.display= "none";
+  }
+
   useEffect(() => {
     setLoading(true);
     CommandJs();
@@ -41,29 +59,16 @@ const Editor = ({ id, Temp }) => {
               <a className="navbar-brand" href="/">
                 A
               </a>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ">
                   <div
                     id="panela_button"
                     className="preview_panel"
                     style={{ marginTop: "-19px",backgroundColor: "transparent" }}
                   ></div>
                   <div className="panel_device"></div>
-                  <div className="style_panel"></div>
+                  <div className="style_panel">
+                  </div>
                   <div className="pages_panel"></div>
-                </ul>
-              </div>
+                
             </div>
           </nav>
           <div
@@ -83,22 +88,25 @@ const Editor = ({ id, Temp }) => {
                 position: "inherit",
                 backgroundColor: "transparent"
               }}
-            >
+            ><a rel="noreferrer" className="prewiew gjs-pn-btn btn btn-light panel__tops prewiew nav-item" href={preview} target="_blank" ><i className="fa fa-eye"></i></a>
             </div>
             <div id="page_div" className="pages-container">
               <div id="mySidebar" className="sidebar">
-                <h3>Pages</h3>
-              <span className="closebtn" onClick={closeNav}>×</span>
+                <h3 style={{paddingBottom: "20px"}}>Pages</h3>
+              <span className="closebtn" onClick={closeNav}>x</span>
               </div>
               </div>
             <div className="editor-canvas">
               <div id="gjs2">{Temp}</div>
             </div>
-            <div className="panel__right">           
+            <div id="right_div" className="container">
+            <span className="closecontianer" id="closecontianer" onClick={closecontainer}>{"<"}</span>
+            <span className="opencontianer" id="opencontianer" style={{display:"none"}} onClick={opencontainer}>{">"}</span>
+            <div className="panel__right" id="panel__right">           
               <div className="layers-container" style={{ textAlign: "center" }}>
                 Layers Manager
               </div>
-              <div className="styles-container" style={{ textAlign: "center" }}>
+              <div className="styles-container" style={{ textAlign: "center",width: "251px" }}>
                 Style Manager
               </div>
               <div className="traits-container" style={{ textAlign: "center" }}>
@@ -107,6 +115,7 @@ const Editor = ({ id, Temp }) => {
               <div id="blocks" style={{ textAlign: "center" }}>
                 Block Manager
               </div>
+            </div>
             </div>
           </div>
         </div>

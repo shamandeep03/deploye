@@ -1,5 +1,7 @@
 import "grapesjs/dist/css/grapes.min.css";
 import "../Screens/Editor.css";
+import "ckeditor";
+import pluginCKEditor from "grapesjs-plugin-ckeditor";
 import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
 import Panelsdata from "./Panels";
@@ -20,8 +22,6 @@ export function  GrapesjsEditor(){
     assetManager: {
       assets: [
         'https://app-landing-theme-02.netlify.app/images/image-06.png',
-        // Pass an object with your properties
-       
         {
           type: 'image',
           src: 'https://app-landing-theme-02.netlify.app/images/image-01.png',
@@ -30,8 +30,6 @@ export function  GrapesjsEditor(){
           name: 'displayName'
         },
         {
-          // As the 'image' is the base type of assets, omitting it will
-          // be set as `image` by default
           src: 'https://app-landing-theme-02.netlify.app/images/image-07.png',
           height: 350,
           width: 250,
@@ -46,7 +44,7 @@ export function  GrapesjsEditor(){
       dropzone: 0,
       openAssetsOnDrop: 0,
       dropzoneContent: '<div class="dropzone-inner">Drop media here.</div>',
-      modalTitle: 'Select Image',
+      modalTitle: 'Selectss Image',
     },
     fromElement: 1,
     height: "648px",
@@ -87,6 +85,17 @@ export function  GrapesjsEditor(){
     },
     pageManager: {
       pages: Pages
+    },
+    plugins: [pluginCKEditor],
+    pluginsOpts: {
+      'gjs-plugin-ckeditor' : {
+          language: 'en',
+          toolbar: [
+              { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+              { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+          ],
+      }
+     
     },
     styleManager: {
       appendTo: ".styles-container",
@@ -184,56 +193,7 @@ export function CommandJs(dispatch) {
       editor.Pages.select(pageId.target.id)
     });
   }
- 
-  editor.on("component:selected", () => {
-    const commandToAdd = "tlb-settime";
-    const commandIcon = "fa fa-arrow-right";
-    const selectedComponent = editor.getSelected();
-    const defaultToolbar = selectedComponent.get("toolbar");
-    const commandExists = defaultToolbar.some(
-      (item) => item.command === commandToAdd
-    );
-    // if it doesn't already exist, add it
-    if (!commandExists) {
-      selectedComponent.set({
-        toolbar: [
-          //...defaultToolbar,
-          {
-            attributes: { class: "fa fa-clone", title: "copy" },
-            command: (ed) => ed.runCommand("tlb-clone", { force: 1 }),
-          },
-          {
-            attributes: { class: "fas fa-paste", title: "paste" },
-            command: (ed) => ed.runCommand(document.body.style.color = "red", { force: 1 }),
-          },
-          {
-            attributes: { class: commandIcon, title: "next" },
-            command: (ed) => ed.runCommand("core:component-next", { force: 1 }),
-          },
-          {
-            attributes: { class: "fa fa-arrow-left", title: "previous" },
-            command: (ed) => ed.runCommand("core:component-prev", { force: 1 }),
-          },
-          {
-            attributes: { class: "fa fa-trash-o", title: "delete" },
-            command: (ed) =>
-              ed.runCommand("core:component-delete", { force: 1 }),
-          },
-        ],
-      });
-    }
-  });
-  editor.on("component:selected", () => {
-    const selected = editor.getSelected();
-    if (!selected || !selected.get("draggable")) return;
-    const el = selected.view.el;
-    if (!el._hasCustomEvent) {
-      el._hasCustomEvent = 1;
-      el.addEventListener("mousedown", () => {
-        editor.runCommand("tlb-move");
-      });
-    }
-  });
+  
 
   editor.Commands.add("show-layers", {
     getRowEl(editor) {

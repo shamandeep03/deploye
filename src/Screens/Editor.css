@@ -17,6 +17,15 @@
 #mySidebar{
   display: flex;
   flex-direction: column;
+  z-index: 99999;
+  height: 90%;
+  position: absolute;   
+}
+span.closebtn {
+  position: absolute;
+  left: 200px;
+  float: right;
+  display: flex;
 }
 span#isdqw {
   color: white !important;
@@ -28,14 +37,9 @@ span#isdqw {
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
 }
-.sidebar .closebtn {
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-top: -48px;
-  margin-left: 201px;
+#right_div {
+  width: 268px;
 }
 .sidebar a {
   padding: 8px 8px 8px 32px;
@@ -58,11 +62,6 @@ span#isdqw {
   padding: 16px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
 
 .panel__top {
   padding: 0;
@@ -71,6 +70,21 @@ span#isdqw {
   position: initial;
   justify-content: center;
   justify-content: space-between;
+}
+.gjs-am-file-uploader>form #gjs-am-uploadFile{
+  padding: 0% !important;
+}
+.gjs-am-file-uploader>form {
+  position: absolute;
+  width: 21%;
+  border: none;
+  margin-top: 14px;
+}
+
+
+.gjs-am-add-asset button{
+  float: left;
+  margin-left: 5px;
 }
 .navbar-light .navbar-brand {
   color: white;
@@ -87,27 +101,40 @@ span#isdqw {
   min-height: auto;
 }
 .gjs-am-file-uploader #gjs-am-title {
-  position: absolute;
-  padding: 64px 58px;
-  width: 95%;
+  margin-top:-150px;
+}
+div#gjs-am-title {
+  font-size: 11px;
 }
 .gjs-am-file-uploader {
-  width: 43%;
-  float: left;
+  width: 27%;
+  float: right  !important;
 }
 .gjs-am-assets-cont {
   background-color: rgba(0,0,0,.1);
   border-radius: 3px;
   box-sizing: border-box;
   padding: 10px;
-  width: 52%;
+  width: 100%;
   float: right;
   height: 325px;
   overflow: hidden;
 }
+.gjs-am-preview-cont {
+width: 88%;
+height: 140px;
+}
+.gjs-am-add-asset .gjs-am-add-field{
+  width: 370px;
+  float:left;
+}
+.gjs-am-asset {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
 .gjs-mdl-title {
   font-size: 1rem;
-  text-align: center;
 }
 .editor-row {
   display: flex;
@@ -148,6 +175,11 @@ span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
     margin-left: 238px;
 } 
 }
+@media (min-width:720px) {
+span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
+    margin-left: 238px;
+} 
+}
 .panel__top  {
   margin-left: 200px;
 }
@@ -171,7 +203,10 @@ span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
   background-color: transparent !important;
 }
 .preview_panel.gjs-pn-panel.gjs-pn-basic-actions.gjs-one-bg.gjs-two-color {
-  margin-top: -18px;
+  margin-left: 30px;
+}
+#panel__right{
+  display: flex;
 }
 .btn-light {
   color: gray;
@@ -202,9 +237,39 @@ span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
   flex-direction: column;
   margin: 2px;
 }
-span.gjs-pn-btn.btn.btn-light.panel__tops.prewiew.nav-item.page_add {
-  margin-left: 132px;
-  width: 204px;
+@media only screen and (max-width: 823px){
+span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
+    margin-left: 121px;
+}
+}
+@media only screen and (min-width: 314px){
+  .gjs-pn-btn {
+    min-width: 21px;
+    font-size: 18px;
+    margin-right: 4px;
+}
+div#left_button_panel {
+  flex-basis: 34px;
+}
+}
+@media only screen and (max-width: 823px) {
+  span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
+    margin-left: 304px;
+}
+}
+@media only screen and (min-width: 670px) {
+  span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
+    margin-left: 391px;
+}
+
+}
+@media only screen and (min-width: 310px) {
+  .gjs-pn-btn {
+  min-width: 20px;
+  }
+  div#left_button_panel {
+    flex-basis: 25px !important;
+}
 }
 @media only screen and (min-width: 768px) {
   .gjs-pn-buttons {
@@ -219,10 +284,20 @@ span.gjs-pn-btn.btn.btn-light.panel__tops.prewiew.nav-item.page_add {
     text-align: center !important;
   }
 }
+.page_buton {
+  width: 90%;
+}
 @media only screen and (max-width: 600px) {
   .prewiew {
-    width: 87px;
-    margin: 5px;
+    width: 1px;
+    padding: 0px;
+    font-size: 10px;
+  }
+  .page_buton {
+    width: 90%;
+  }
+  span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
+    margin-left: 0px;
   }
   .panel__right {
     flex-basis: 230px;
@@ -232,10 +307,14 @@ span.gjs-pn-btn.btn.btn-light.panel__tops.prewiew.nav-item.page_add {
     z-index: 1;
     display: contents;
   }
- .left__top{
-   display: none;
- }
-
+  a.prewiew.btn.btn-light.panel__tops.prewiew.nav-item {
+    width: 24px;
+}
+span.gjs-pn-btn.openbtn.btn.btn-light.panel__tops.prewiew.nav-item {
+  line-height: 11px;
+  width: 34px !important;
+  padding: 0px;
+}
 }
 .navbar-collapse {
   flex-basis: 100%;

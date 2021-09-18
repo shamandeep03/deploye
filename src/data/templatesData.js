@@ -13,6 +13,7 @@ export const data = [
       "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
       "https://app-landing-theme-01.netlify.app/stellar.js",
   ],
+  preview:"https://app-landing-theme-01.netlify.app",
   pages:[
     { component:`
     <!DOCTYPE html>
@@ -14499,7 +14500,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'second_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'second_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'second_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-02.netlify.app",
   },
   {
     name: "ThirdTemplate",
@@ -14517,7 +14519,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'third_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'third_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'third_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-03.netlify.app",
   },
   {
     name: "FourthTemplate",
@@ -14535,7 +14538,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'fourth_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'fourth_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'fourth_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-04.netlify.app",
   },
   {
     name: "FivethTemplate",
@@ -14554,7 +14558,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'fourth_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'fourth_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'fourth_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-05.netlify.app",
   },
   {
     name: "sixthTemplate",
@@ -14562,7 +14567,8 @@ p.validity {
     image: "../images/5.jpg",
     links: [
       "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
-      "https://app-landing-theme-06.netlify.app/nine.js",
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
+      "https://app-landing-theme-06.netlify.app/default.js",
       "https://app-landing-theme-06.netlify.app/bootstrap.js",
       "https://app-landing-theme-06.netlify.app/slick.js",
       "https://app-landing-theme-06.netlify.app/plugin.js"
@@ -14571,7 +14577,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'five_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'five_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'five_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-06.netlify.app",
   },
   {
     name: "sixthTemplate",
@@ -14587,7 +14594,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'seventh_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'seventh_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'seventh_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-07.netlify.app",
   },
   {
     name: "EightTemplate",
@@ -14603,7 +14611,8 @@ p.validity {
       { component:'<div>page 1</div>',id:'eighth_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'eighth_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'eighth_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-08.netlify.app",
   },
   {
     name: "EightTemplate",
@@ -14616,6 +14625,7 @@ p.validity {
       { component:'<div>page 1</div>',id:'nineth_1',name:'Page 1'},
       { component:'<div>page 2</div>',id:'nineth_2',name:'Page 2'},
       { component:'<div>page 3</div>',id:'nineth_3',name:'Page 3'},
-    ]
+    ],
+    preview:"https://app-landing-theme-09.netlify.app",
   },
 ];
