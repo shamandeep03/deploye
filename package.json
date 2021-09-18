@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "atob": "^2.1.2",
     "axios": "^0.21.1",
+    "ckeditor": "^4.12.1",
     "eslint": "^7.32.0",
     "grapesjs": "^0.17.22",
     "grapesjs-custom-code": "^0.1.3",
