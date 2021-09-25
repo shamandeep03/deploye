@@ -2,21 +2,20 @@ import React, { useEffect, useState } from "react";
 import {CommandJs}  from "../config/GrapesjsEditor";
 import "../Screens/Editor.css";
 import { css } from "@emotion/react";
-import RingLoader from "react-spinners/RingLoader";
+import BounceLoader from "react-spinners/BounceLoader";
 import store from '../../src/store';
 
 const Editor = ({ id, Temp }) => {
   let [loading, setLoading] = useState(true);
   var preview = store.getState().template.cdns[0].preview;
   const override = css`
-    border-color: red;
     position :absolute;
     height:100vh;
     width:100%;
     padding-top:20%;
     padding-left:20%;
     justify-content: center !important;
-    background-color: white;
+    background-color: #212529;
     z-index:99999;
   `; 
   const closeNav=()=>{
@@ -47,12 +46,12 @@ const Editor = ({ id, Temp }) => {
   }, []);
   return (
     <div className="container-fluid p-0">
-      {loading && <RingLoader
+      {loading && <div id="loaderring"><BounceLoader
         color={"gray"}
         loading={loading}
         css={override}
-        size={150}
-      />}
+        size={60}
+      /></div>}
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -94,6 +93,7 @@ const Editor = ({ id, Temp }) => {
               <div id="mySidebar" className="sidebar">
                 <h3 style={{paddingBottom: "20px"}}>Pages</h3>
               <span className="closebtn" onClick={closeNav}>x</span>
+              <button className="btn btn-light panel__tops prewiew nav-item page_buton" type="submit" id="new_page">Add new</button>
               </div>
               </div>
             <div className="editor-canvas">

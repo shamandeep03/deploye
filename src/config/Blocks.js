@@ -4443,6 +4443,70 @@ export default function Block() {
         title: "Insert steps section",
       },
     },
+    {
+      label: `simple`,
+      content: `<ol>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ol> `,
+      category: {
+        label: "Block Lists",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "list section",
+      },
+    },
+    {
+      label: `simple`,
+      content: `<ol>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ol> `,
+      category: {
+        label: "Block Lists",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "list section",
+      },
+    },
+    {
+      label: `Ordered`,
+      content: `<ol>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ol> `,
+      category: {
+        label: "Block Lists",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "list section",
+      },
+    },
+    {
+      label: `Unordered`,
+      content: `<ul>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul> `,
+      category: {
+        label: "Block Lists",
+        order: 1,
+        open: false,
+      },
+      attributes: {
+        title: "list section",
+      },
+    },
     // {
     //   id: "text",
     //   label: "Text",

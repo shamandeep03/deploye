@@ -79,8 +79,11 @@ span#isdqw {
   width: 21%;
   border: none;
   margin-top: 14px;
+  background-color: rgba(255,255,255,.1);
 }
-
+input#gjs-am-uploadFile {
+  height: 35px;
+}
 
 .gjs-am-add-asset button{
   float: left;
@@ -101,7 +104,7 @@ span#isdqw {
   min-height: auto;
 }
 .gjs-am-file-uploader #gjs-am-title {
-  margin-top:-150px;
+  margin-top:-140px;
 }
 div#gjs-am-title {
   font-size: 11px;
@@ -123,6 +126,16 @@ div#gjs-am-title {
 .gjs-am-preview-cont {
 width: 88%;
 height: 140px;
+}
+.form-div {
+  display: flex;
+}
+.gjs-mdl-content {
+  height: 200px;
+  margin-top: 50px;
+}
+button.btn.btn-primary.name_save {
+  margin-left: 4%;
 }
 .gjs-am-add-asset .gjs-am-add-field{
   width: 370px;
@@ -201,6 +214,19 @@ span.gjs-pn-btn.fa.fa-paint-brush.btn.btn-light.panel__tops.prewiew.nav-item {
 }
 .gjs-one-bg .gjs-pn-buttons{
   background-color: transparent !important;
+}
+.settingbtn {
+  float: right;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.css-kmjorh {
+margin-top: 20%;
+margin-left: 50%;
+}
+.css-s9kve {
+display: none;
 }
 .preview_panel.gjs-pn-panel.gjs-pn-basic-actions.gjs-one-bg.gjs-two-color {
   margin-left: 30px;

@@ -1,6 +1,6 @@
 import "grapesjs/dist/css/grapes.min.css";
 import "../Screens/Editor.css";
-import "ckeditor";
+//import "ckeditor";
 import pluginCKEditor from "grapesjs-plugin-ckeditor";
 import grapesjs from "grapesjs";
 import Blockdata from "./Blocks";
@@ -86,17 +86,17 @@ export function  GrapesjsEditor(){
     pageManager: {
       pages: Pages
     },
-    plugins: [pluginCKEditor],
-    pluginsOpts: {
-      'gjs-plugin-ckeditor' : {
-          language: 'en',
-          toolbar: [
-              { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-              { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-          ],
-      }
+    // plugins: [pluginCKEditor],
+    // pluginsOpts: {
+    //   'gjs-plugin-ckeditor' : {
+    //       language: 'en',
+    //       toolbar: [
+    //           { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+    //           { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+    //       ],
+    //   }
      
-    },
+    // },
     styleManager: {
       appendTo: ".styles-container",
       sectors: [
@@ -175,9 +175,10 @@ export function  GrapesjsEditor(){
   };
 };
 
-export function CommandJs(dispatch) {
+export function CommandJs() {
   var setPage = store.getState().template.cdns[0].pages;
   var editor = grapesjs.init(GrapesjsEditor());
+  //butons for page open button
   for( var i = 0; i < setPage.length; i++) {
     var button = document.createElement("div");
     button.innerHTML=setPage[i].name;
@@ -187,15 +188,95 @@ export function CommandJs(dispatch) {
     var buttonDiv = document.getElementById("mySidebar");
     buttonDiv.appendChild(button);
   }
+  //settings button in  open pages button
+  for( var i = 0; i < setPage.length; i++) {
+    var ids = setPage[i].name ;
+    var newbutton = setPage[i].id ;
+    var button = document.createElement("button");
+    button.setAttribute("type", "submit");
+    button.setAttribute("id",ids);
+    button.setAttribute("class","settingbtn fa fa-cog" );
+    var buttonDiv = document.getElementById(newbutton);
+    buttonDiv.appendChild(button);
+  }
+
+  //button for open new page in editor
   for( var j = 0; j < setPage.length; j++) {
     var page_button =  document.getElementById(setPage[j].id);
-    page_button.addEventListener("click", function(pageId){
+      page_button.addEventListener("click", function(pageId){
       editor.Pages.select(pageId.target.id)
     });
   }
-  
-
-  editor.Commands.add("show-layers", {
+ //open modal for name of page
+  for( var a = 0; a < setPage.length; a++) {
+    var id = setPage[a].name;
+    var open = document.getElementById(id)
+    open.addEventListener("click", function(pageId){
+      const modal = editor.Modal;
+      const container = document.createElement('div');
+      var data = document.createElement("input");
+      data.setAttribute("type","text")
+      const inputHtml = `<div class ="form-div"><h3>page name</h3><input type="text" style="width:70%" class="form-control" id="page_name" value="${pageId.target.id}"></input>
+      <button type="button" class="btn btn-primary name_save" onClick="${myFunction}" >save</button></div>`;
+      function myFunction() {
+        var data = document.getElementById("page_name").value;
+        document.getElementById("jds").innerHTML = data;
+      }
+      modal.setTitle('page Settings');
+      container.innerHTML = inputHtml;
+      modal.setContent(container);
+      modal.open();
+    });
+  }
+ //buton for create new page
+  var page_new = document.getElementById("new_page");
+  page_new.addEventListener("click", function(){
+    const pageManager = editor.Pages;
+    const len = pageManager.getAll().length; 
+    var newpage = pageManager.add({
+        name: `Page ${len + 1}`,
+        component: `<div><h1>New page (${len +1})</h1></div>`,
+        id:`Page ${len + 1}`
+    });
+    setPage.push(newpage)
+    var addpages = document.createElement("button")
+    addpages.innerHTML=`New page (${len +1})`;
+    addpages.setAttribute("class", "btn btn-light panel__tops prewiew nav-item page_buton page_buton_new");
+    addpages.setAttribute("type", "submit");
+    addpages.setAttribute("id",`Page ${len + 1}` );
+    var buttonDiv = document.getElementById("mySidebar");
+    buttonDiv.appendChild(addpages);
+    pageManager.select(`Page ${len + 1}`)
+    var button = document.createElement("button");
+    button.setAttribute("type", "submit");
+    button.setAttribute("id", `Page ${len + 1}+ seeting`);
+    button.setAttribute("class","settingbtn fa fa-cog" );
+    var buttonDiv = document.getElementById(`Page ${len + 1}`);
+    buttonDiv.appendChild(button);
+    });
+    for( var a = 0; a < setPage.length; a++) {
+      var id = setPage[a].name;
+      var open = document.getElementById(id)
+      open.addEventListener("click", function(pageId){
+        const modal = editor.Modal;
+        const container = document.createElement('div');
+        var data = document.createElement("input");
+        data.setAttribute("type","text")
+        const inputHtml = `<h3>page name</h3><div class ="form-div"><input type="text" style="width:70%" class="form-control" id="page_name" value="${pageId.target.id}"></input>
+        <button type="button" class="btn btn-primary name_save" onclick="${myFunction}" >save</button></div>`;
+        function myFunction(pageId) {
+          var data = document.getElementById("page_name").value;
+          document.getElementById("jds").innerHTML = data;
+          console.log("jdhjshfj")
+        }
+        modal.setTitle('page Settings');
+        container.innerHTML = inputHtml;
+        modal.setContent(container);
+        modal.open();
+      });
+    }
+    //
+    editor.Commands.add("show-layers", {
     getRowEl(editor) {
       return editor.getContainer().closest(".editor-row");
     },
@@ -273,4 +354,5 @@ export function CommandJs(dispatch) {
     run: (editor) => {editor.setDevice("Tablet")
     document.querySelector(".styles-container").style.display = ""},
   });
+ 
 }
